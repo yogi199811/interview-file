@@ -1,0 +1,450 @@
+ https://www.geeksforgeeks.org/top-mern-stack-interview-questions/
+ 
+ react Quesction __________________________
+ 
+ higer order component in react
+ props drilling 
+ const is mutable or immutable  ?
+
+
+ usememo ,
+
+  useContext 
+
+The useContext hook is used to consume values from a React context.
+
+  usecallback ,
+
+
+ about redux,
+
+ virtual dom ,
+
+ local and state variable in react,
+ ::
+ 
+ React requires state variables as it does not keep track of local variables, so when you attempt to modify them, React does not re-render the DOM. In React, state is a JavaScript object that stores data that can be modified over time. When the state of a component changes, React updates the UI to reflect the new state
+ state variable is mutable
+ local variable is immutable
+
+ pure component
+
+ " Its return value is only determined by its input values. 
+   Its return value is always the same for the same input values."
+
+ component life cycle ..
+
+"A component's lifecycle has three main phases: the Mounting Phase, the Updating Phase, and the Unmounting Phase. The Mounting Phase begins when a component is first created and inserted into the DOM. The Updating Phase occurs when a component's state or props change.
+The Unmounting Phase occurs when a component is removed from the DOM."
+
+
+ 
+
+
+JavaScript _____________________________
+
+ promises in  JavaScript.
+ In JavaScript, a Promise is an object that will produce a single value some time in the future. If the promise is successful, it will produce a resolved value, but if something goes wrong then it will produce a reason why the promise failed. The possible outcomes here are similar to that of promises in real life.1
+
+
+ A promise is a JavaScript object that represents the eventual completion (or failure) of an asynchronous operation and
+ its resulting value. A promise is a proxy for a value not necessarily known when the promise is created
+
+
+
+ hoisting in JS
+
+ Hoisting is the default behaviour of javascript where all the variable and function declarations are moved on top.
+
+
+ async and await,
+
+ "async and await are two keywords in JavaScript that allow you to write asynchronous code in a more synchronous way its make promises easier to write"
+
+
+ 
+ callback function
+
+ A callback is a JavaScript function that is passed to another function as an argument or a parameter. This function is to be executed whenever the function that it is passed to gets executed.
+
+
+
+ map,filter,reduse
+
+
+
+
+ node Quesction ________________________
+
+ what is event loop ?
+ middleware ?
+
+ restful api ?
+
+ 
+ experince interview questions
+
+ deep copy or shallow copy
+
+ * A deep copy is a copy that creates a new object with new memory locations for all of its properties and nested objects or arrays.
+
+ * A shallow copy is a copy that creates a new object with the same memory locations for all of
+ its properties and nested objects or arrays.
+
+
+ what is jsx.
+
+ What is JSX? JSX stands for JavaScript XML. JSX allows us to write HTML in React. JSX makes it easier to write and add HTML in React.
+
+
+
+ what is react form
+ 
+React Forms are the components used to collect and manage the user inputs. These components includes the input elements like text field, check box, date input, dropdowns etc.
+
+
+
+
+ react fiber
+
+ React Fiber is a reimplementation of React's core algorithm, designed to enhance the user interface's responsiveness and renderability. The term "fiber" refers to a unit of work, a fundamental concept in the fiber architecture.
+
+
+ clone element
+
+ cloneElement() allows you to create a copy of an existing React element with additional props, children, and even a new key.
+
+
+
+ control flow function
+ 
+Control flow is the order in which the computer executes statements in a script
+
+Write a function that splits an array into chunks of a specified size.  Input array= [1, 2, 3, 4, 5, 6, 7, 8, 9];  Size 3 Output[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+Write a function that will return the duplicate element  from an array  input - [1,4,8,9,4,7,9] output  [4,9]
+
+state less component 
+
+Write a function that will return the duplicate element  from an array  input - [1,4,8,9,4,7,9] output  [4,9]
+ChatGPT
+You can find the duplicate elements in an array by using a function that keeps track of the elements seen so far and adds duplicates to a result list. Here's a function in JavaScript that accomplishes this:
+
+javascript
+Copy code+
+
+function findDuplicates(arr) {
+  const seen = new Set();
+  const duplicates = new Set();
+
+  for (const num of arr) {
+    if (seen.has(num)) {
+      duplicates.add(num);
+    } else {
+      seen.add(num);
+    }
+  }
+
+  return Array.from(duplicates);
+}
+
+const inputArray = [1, 4, 8, 9, 4, 7, 9];
+const result = findDuplicates(inputArray);
+console.log(result); // Output: [4, 9]
+Explanation:
+seen: A Set to store the elements that have been encountered in the array.
+duplicates: A Set to store the duplicate elements.
+The function iterates through the array, and for each element:
+
+If the element is already in the seen set, it is added to the duplicates set.
+If not, it is added to the seen set.
+Finally, the duplicates set is converted to an array and returned. Using Sets ensures that each element is stored only once, which efficiently handles the detection of duplicates.
+
+Write a function that splits an array into chunks of a specified size.  Input array= [1, 2, 3, 4, 5, 6, 7, 8, 9];  Size 3 Output[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+ChatGPT
+You can split an array into chunks of a specified size by iterating through the array and slicing it into subarrays of the given size. Here's a JavaScript function that does this:
+
+javascript
+Copy code
+function chunkArray(array, size) {
+  const result = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+  return result;
+}
+
+const inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const chunkSize = 3;
+const chunks = chunkArray(inputArray, chunkSize);
+console.log(chunks); // Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+Explanation:
+result: An empty array to hold the chunks.
+for loop: The loop iterates over the input array with a step size of size. For each iteration:
+array.slice(i, i + size) creates a subarray starting from index i and ending before index i + size.
+This subarray is then pushed into the result array.
+The function returns the result array containing the chunks.
+
+
+state less component 
+
+::A stateless component in React, often referred to as a functional component, is a component that does not manage or hold its own state. Instead, it receives data and methods as props from its parent component and renders the UI accordingly. These components are typically simpler and easier to test because they don't have a this context or lifecycle methods. 
+::
+
+
+lazey loading
+
+why we use lazy login
+pure component
+
+
+
+
+
+Hello , 
+I am yogesh kushwaha ,
+I have completed my Bachlore of engineering from TIT college in Mechanical stream, after that I have trained my self in web development from sheriyans coding school.
+ I've become proficient in HTML, CSS, and JavaScript, and I've specialized in modern front-end frameworks like React.
+ Currently I'm a  front-end developer with 2 years of experience in crafting web applications that not only look visually stunning but also deliver exceptional user experiences. 
+
+
+Why do you want to switch your current job?
+Sample answer: "I am looking to change my job because I am seeking a role that offers greater alignment with my career objectives and allows me to utilize my strengths and 
+
+expertise to make a meaningful impact. I believe that a new environment will provide Fresh challenges and opportunities for growth.
+
+Salary Expectation ?
+“Given the job description and responsibilities, my experience level, and the competitive market, I'd expect a salary range of  4.5 lpa – 5.5lpa I
+
+
+
+
+Project Discription -:
+Currently I am working in phillipins airlines project , that is contact center team support application  for customer support .
+We are 8 members in a team, and I am working as a react js developer , I had developed some features like status change
+ [online , busy , be right back , offline etc] , call transfer , rating, feedback form and attendance tracker with the help of graph (which I get from backend development team ).
+
+In this project there are 2 parts one is for admin who can access all employees data like their attendance , their custmore feedback , their qeuery  and some extra funtinalities , On the other hand there is a common dashboard which is similar to all employees , who can log in by their credential and only receive the queries from custmor by a call , audio, chat etc .
+
+
+ ++++++++++ what is clone element in react 
+Ans )  cloneElement() allows you to create a copy of an existing React element with additional props, children, and even a new key.
+With cloneElement you're taking an element where the user already passed some props to a component and passing additional props. 
+It's not apparent from looking at the code where the prop is coming from. So it's make code less clear.
+ It also makes it harder to write composable components
+
+
++++++++++++ deep copy and shallow copy
+Ans)
+Shallow Copy	                                                                                        Deep Copy
+Shallow Copy stores the references of objects to the original memory address.   	Deep copy stores copies of the object’s value.
+Shallow Copy reflects changes made to the new/copied object in the original object.	Deep copy doesn’t reflect changes made to the new/copied object in the original object.
+Shallow Copy stores the copy of the original object and points the references to the objects.	Deep copy stores the copy of the original object and recursively copies the objects as well.
+A shallow copy is faster.	                                                                 Deep copy is comparatively slower.
+
+
++++++++++++++++++++ Closures 
+Ans) A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). 
+In other words, a closure gives you access to an outer function's scope from an inner function.
+ A closure in JavaScript is a function that has access to the variables in its parent scope, even after the parent function has completed execution.
+ This allows for data to be "closed over" or remembered by the inner function, even after the outer function has returned.
+
+Link :   https://youtu.be/qikxEIxsXco?feature=shared      (closures)
+
+
+
++++++++++++++++++ react Fiber
+Ans)
+React Fiber is a complete rewrite of the React core algorithm, focusing on improving performance and responsiveness. Its main goal is to enable incremental rendering, allowing React
+ to split the work of rendering into smaller chunks, and pause and resume the work as needed. This approach makes it possible to prioritize updates, resulting in a smoother
+
+ user experience, especially in large applications.
+
+Key Features of React Fiber -:
+1.Incremental Rendering: Fiber divides the rendering work into smaller units, enabling it to yield control back to the browser whenever necessary, improving the application's responsiveness.
+2.Concurrency: Fiber introduces the ability to work on multiple tasks concurrently, making it easier to prioritize updates and efficiently manage rendering.
+3.Error Boundaries: Fiber introduces a new error-handling mechanism called Error Boundaries, which allows developers to catch errors in the component tree and display a fallback UI.
+4.Scheduling: Fiber's scheduling mechanism helps to prioritize and manage updates more efficiently, ensuring that high-priority updates are processed before lower-priority ones.
+
+
+
+++++++++++++ control flow 
+Ans)
+Control flow is the order in which the computer executes statements in a script. Code is run in order from the first line in the file to the last line, 
+unless the computer runs across the (extremely frequent) structures that change the control flow, such as conditionals and loops.
+
+
+++++++++++++++++++++++++++ Event bubling and and Event Capturing
+Ans )  Bubbling
+Bubbling is the default way that events propagate. It starts with the element that triggered the event and then bubbles up to the containing elements in the hierarchy.
+ This means that event handlers attached to the target element and its ancestors will be called, in the order in which they were attached.
+
+Capturing
+Capturing is the opposite of bubbling. It starts with the outermost element and then propagates down to the inner elements.
+ This means that event handlers attached to the ancestors of the target element will be called, in the reverse order in which they were attached.
+
+
+
++++++++++++++++++++++++++++++ Array Dependency
+Ans) In React, a dependency array is used in hooks like useEffect and useMemo to determine when to re-run the effect or recompute the memoized value.
+ The dependency array is an array of values that the effect or memoized value depends on
+
+
+
+
+
+++++++++++++++++++++ sythetic Events
+Ans) React uses a synthetic events system to ensure that React apps and interfaces are consistent and fast.
+ It provides consistency by normalizing events across browsers and systems so that they have the same properties.
+
+
+
+****************************** what is lazy loading in react
+Ans) In simple terms, lazy loading is a design pattern. It allows you to load parts of your application on-demand to reduce the initial load time.
+ For example, you can initially load the components and modules related to user login and registration. Then, you can load the rest of the components based on user navigation.
+  React provides a built-in React. lazy() method and Suspense component to achieve lazy loading.
+  Lazy loading is a technique for waiting to load certain parts of a webpage — especially images — until they are needed.
+
+
+****************************** Stateless COmponents 
+Ans) A stateless component, also known as a functional component, is a fundamental concept in React that represents a UI element without any internal state management.
+ In simpler terms, a stateless component is a function that takes in props as input and returns JSX (JavaScript XML) to describe the UI.
+  Stateless components, also referred to as functional components, do not hold or manage local state. They simply accept data via props and render UI elements. 
+With the introduction of Hooks in React 16.8, functional components have become more powerful, allowing them to use state and other React features without being class-based.
+
+
+
+
+
++++++++++++++++++++++++++++++ THIS Keyword
+Ans ) THIS keyword has window value inside the non-strict mode 
+
+but in the function === its value is window inside non strict modde but in the strict mode is undefne
+
+* this also depends how the function called -: if functiion clled like - x() then the value is undefiend but window.x() thn value is given value is return value
+
+* in the object -: if method is called then  this return a object  and this represent the object 
+so the value if (this.a) would we the a returned value
+
+
+*** Call Apply and Bind , tHIS keys behaves 
+
+** if ThIS is present insdie the object's methos as an arrow function so it behaves like window
+   and inside the nested method its value is object
+
+** inside the DOM , it will give reference to html element
+
+
+
++++++++++++++++++++++ promises 
+* Promise.all()
+* promise.allSettled()
+*Promise.race()
+* Promise.any()
++++++++++++++++++fat arrow fun
+++++++++++++++++++ setImmediatly
+
+::: what is soup api or rest full api  ?
+Ans) REST (Representational State of Resource) is an architectural style for designing networked applications.
+It's a way to communicate between systems, typically between a client and a server, using a standardized
+set of operations (HTTP methods) to manipulate resources on the server.
+
+
+
+
+
+
+::: what is event propgation ?
+::: dom diffing ?
+::: useEffect and useLayoutEffect
+::: what is event propogation ?  whatt will happen if we use stop.propogation ?
+::: async await and promises has 2 different 
+::: 
+const myPromise = ()=> Promise.resolve("i have resolved")
+
+
+function first(){
+  myPromise.then((res)=> console.log(res))
+  console.log("second")
+}
+
+
+async function second(){
+  console.log( await myPromise())
+  console.log("second")
+
+
+}
+
+
+first()
+second()
+
+
+
+++++++++++++++++++++++++++o++++++++++++++++ store data in browser
+
+Ans ) Cookies: Cookies are small text files that can store data such as user preferences, login information, and shopping cart items.
+
+ They are typically used to store session data that is only available while the user’s browser is open.
+
+2. Local Storage: Local storage is a key-value store that can hold larger amounts of data than cookies.
+
+It is supported by modern web browsers and can be accessed via JavaScript. Local storage is persistent, meaning that the data will remain available even if the user closes their browser.
+
+
+3. Session Storage: Session storage is similar to local storage, but it is not persistent.
+
+Session storage is only available for the duration of the user’s session, meaning that the data will be lost when the user closes their browser.
+
+
++++++++++++++++++++++++++++++++++++++++= What is Memoization?
+
+Ans) Memoization is a smart way to make your functions faster by storing and reusing their past results.
+
+Memoization is an optimization technique used to speed up computer programs by caching the results of expensive function calls
+
+and returning them when the same inputs are encountered again.
+
+In JavaScript,
+
+ it's like using a memory system: if a function is asked the same question again, it quickly retrieves the answer from its memory instead of recalculating it.
+  
+
+
+Simple Quiz App:
+Questions: Create a set of questions with multiple-choice or true/false answers.
+Scoring: Calculate and display the user's score.
+Feedback: Provide feedback on correct and incorrect answers
+
+
+what is middleware 
+Ans) Middleware is a software component that acts as an intermediary between an operating system and applications running on
+it. It provides a layer of abstraction between the operating system and the application, allowing the application to
+interact with the operating system in a more standardized and efficient way.
+Middleware can perform a variety of functions, including:
+Connecting applications to databases
+Providing security features
+Managing communication between applications
+Handling transactions
+Providing caching and content delivery
+ 
+
+
+
+authentification and autheraigation  ?
+
+
+Ans) Authentication is the process of verifying the identity of a user, typically by checking a username and
+password or other credentials.
+
+
+Authorization is the process of determining what actions a user can perform on a system or application.
+
+
+
+
+ what will we say when we have user and a product
+
+
+https://jsonplaceholder.typicode.com/users
