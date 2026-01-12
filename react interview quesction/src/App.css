@@ -1,0 +1,71 @@
+
+input{
+  background-color:lightgrey;
+  border: 2px solid black;
+  text-align: center;
+  width: 200px;
+  padding: 10px 10px;
+ 
+  
+}
+input:focus{
+  outline: none;
+  background-color: lightblue;
+}
+
+.card{
+  display: flex;
+  padding: 10px 0;
+  flex-direction: column;
+  margin: 20px 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.shoping{
+  background-color: cadetblue;
+  height: 150px;
+  width: 200px;
+  margin: 20px;
+  text-align: center;
+  padding: 5px;
+  overflow-y: auto;
+}
+
+.list{
+  margin: 10px;
+  padding: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.list:hover{
+  color: red;
+}
+
+.bucket{
+  width: 300px;
+  margin: 50px auto;
+}
+.bucket_list{
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightpink;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.strik{
+  text-decoration: line-through;
+  color: gray;
+}
+
+.btn{
+  display: flex;
+ 
+  background-color: red;
+}
+
+

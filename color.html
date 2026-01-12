@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Change DIv</title>
+  </head>
+  <style>
+    body {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .div {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid black;
+      transition-timing-function: all cubic-bezier(0.19, 1, 0.22, 1) 3s;
+    }
+    .div:nth-child(1) {
+      background-color: grey;
+      color: wheat;
+      transition-timing-function: all cubic-bezier(0.19, 1, 0.22, 1) 3s;
+
+    }
+    .div:nth-child(2) {
+      background-color: red;
+      color: rgb(0, 0, 0);
+    }
+    .div:nth-child(3) {
+      background-color: yellow;
+      color: rgb(0, 0, 0);
+    }
+    .div:nth-child(4) {
+      background-color: pink;
+      color: rgb(0, 0, 0);
+    }
+  </style>
+  <body>
+    <div class="div" id="gray">gray</div>
+    <div class="div" id="red">red</div>
+    <div class="div" id="yellow">yellow</div>
+    <div class="div" id="pink">pink</div>
+
+    <script>
+      const div = document.querySelectorAll(".div");
+      const body = document.querySelector("body");
+
+      div.forEach((value) => {
+        value.addEventListener("click", (e) => {
+          console.log(e.target);
+          if (e.target.id === "gray") {
+            body.style.backgroundColor = "gray";
+            console.log("done");
+          }
+
+          if (e.target.id === "red") {
+            body.style.backgroundColor = "red";
+          }
+
+          if (e.target.id === "yellow") {
+            body.style.backgroundColor = "yellow";
+          }
+          if (e.target.id === "pink") {
+            body.style.backgroundColor = "pink";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

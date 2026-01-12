@@ -1,0 +1,5 @@
+Given an array of size n-1 containing unique numbers from 1 to n, find the missing number.Ex1:Input: [1, 2, 4, 5]Output: 3
+
+SUSHMITA KUMBA PREMKUMAR
+3:40 PM
+Title case (capitalize each word)Ex1: "hello world, good day" → "Hello World, Good Day"Ex2: "javaScript is awesome" → "Javascript Is Awesome".

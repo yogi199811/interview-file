@@ -5,19 +5,62 @@
  higer order component in react
  props drilling 
  const is mutable or immutable  ?
+ usememo,
+useContext 
 
 
- usememo ,
+what is currying in jS ?
 
-  useContext 
+Currying is used in JavaScript to break down complex function calls into smaller, more manageable steps. It transforms a function with multiple arguments into a series of functions, each taking a single argument.
+
+It converts a function with multiple parameters into a sequence of functions.
+Each function takes a single argument and returns another function until all arguments are received.
+Helps in functional programming by enabling function reusability and composition.
+
+
+example :=  currying.js
+
+
+what is the default property of Li and H1 tag ?
+what reset  css ?
+what is webSocket ?
+in functional component react lifecycle phase ?
+ 
+ 
+
+
+what are generators function in JS ?
+
+A generator function is a special type of function that can pause its execution at any point and resume later. They are defined using the function* syntax and use the yield keyword to pause execution and return a value.
+
+example => generators.js
+
+
+how to scale the database ?
+ 
+ Scaling a database involves increasing its capacity to handle more data and users. Two primary approaches are vertical scaling (scaling up) and horizontal scaling (scaling out). Vertical scaling involves adding more resources (CPU, RAM, storage) to a single server, while horizontal scaling adds more servers to distribute the load and data across them. Other techniques include caching, sharding, and replication to optimize performance and availability. 
+
+Choosing the Right Approach:
+
+The best scaling approach depends on the specific needs of the application and database. Vertical scaling is suitable for smaller databases or when you want a quick and simple solution. Horizontal scaling is necessary when you need to handle a large volume of data or a large number of users. Sharding is a powerful technique for horizontal scaling, but it can also increase the complexity of the database architecture. 
+
+
 
 The useContext hook is used to consume values from a React context.
+ 
+  usecallback , 
 
-  usecallback ,
+What is callback hell in JavaScript W3schools?
+
+Callback hell refers to the situation in JavaScript where multiple nested callbacks create complex, deeply indented code, often called the “pyramid of doom.” This structure makes the code difficult to read, debug, and maintain, resulting in poor code quality and scalability issues.1
+
+
+is JS asynchronous or synchronous ?
+
+By default, JavaScript is synchronous. This means it executes code sequentially, one line at a time, from top to bottom. However, JavaScript also provides mechanisms to handle asynchronous operations, such as through callbacks, Promises, and async/await, which allow for non-blocking code execution. 
 
 
  about redux,
-
  virtual dom ,
 
  local and state variable in react,
@@ -26,6 +69,7 @@ The useContext hook is used to consume values from a React context.
  React requires state variables as it does not keep track of local variables, so when you attempt to modify them, React does not re-render the DOM. In React, state is a JavaScript object that stores data that can be modified over time. When the state of a component changes, React updates the UI to reflect the new state
  state variable is mutable
  local variable is immutable
+ 
 
  pure component
 
@@ -44,6 +88,7 @@ The Unmounting Phase occurs when a component is removed from the DOM."
 JavaScript _____________________________
 
  promises in  JavaScript.
+
  In JavaScript, a Promise is an object that will produce a single value some time in the future. If the promise is successful, it will produce a resolved value, but if something goes wrong then it will produce a reason why the promise failed. The possible outcomes here are similar to that of promises in real life.1
 
 
@@ -77,6 +122,28 @@ JavaScript _____________________________
  node Quesction ________________________
 
  what is event loop ?
+
+ The event loop in Node.js is a mechanism that allows asynchronous tasks to be handled efficiently without blocking the execution of other operations. It:
+ 
+ Executes JavaScript synchronously first and then processes asynchronous operations.
+
+ Delegates heavy tasks like I/O operations, timers, and network requests to the libuv library.
+
+ Ensures smooth execution of multiple operations by queuing and scheduling callbacks efficiently.
+
+Why Event Loop is important?
+
+The Event Loop is essential in Node.js because it allows non-blocking, asynchronous operations to be handled efficiently, even though Node.js operates on a single thread.
+
+Enables non-blocking execution despite Node.js being single-threaded.
+Helps handle I/O-bound tasks efficiently.
+Makes Node.js suitable for scalable applications like web servers. 
+
+
+ 
+
+
+
  middleware ?
 
  restful api ?
@@ -110,6 +177,7 @@ React Forms are the components used to collect and manage the user inputs. These
  React Fiber is a reimplementation of React's core algorithm, designed to enhance the user interface's responsiveness and renderability. The term "fiber" refers to a unit of work, a fundamental concept in the fiber architecture.
 
 
+
  clone element
 
  cloneElement() allows you to create a copy of an existing React element with additional props, children, and even a new key.
@@ -120,13 +188,21 @@ React Forms are the components used to collect and manage the user inputs. These
  
 Control flow is the order in which the computer executes statements in a script
 
-Write a function that splits an array into chunks of a specified size.  Input array= [1, 2, 3, 4, 5, 6, 7, 8, 9];  Size 3 Output[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+Write a function that splits an array into chunks of a specified size.Input array= [1, 2, 3, 4, 5, 6, 7, 8, 9]; Size 3Output[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-Write a function that will return the duplicate element  from an array  input - [1,4,8,9,4,7,9] output  [4,9]
+Write a function that will return the duplicate element  from an arrayinput - [1,4,8,9,4,7,9]output  [4,9]
 
-state less component 
+what is state less component ?
 
-Write a function that will return the duplicate element  from an array  input - [1,4,8,9,4,7,9] output  [4,9]
+A stateless component is a React component that does not have its own state.
+
+
+
+
+
+
+
+Write a function that will return the duplicate element  from an arrayinput - [1,4,8,9,4,7,9]output  [4,9]
 ChatGPT
 You can find the duplicate elements in an array by using a function that keeps track of the elements seen so far and adds duplicates to a result list. Here's a function in JavaScript that accomplishes this:
 
@@ -160,7 +236,7 @@ If the element is already in the seen set, it is added to the duplicates set.
 If not, it is added to the seen set.
 Finally, the duplicates set is converted to an array and returned. Using Sets ensures that each element is stored only once, which efficiently handles the detection of duplicates.
 
-Write a function that splits an array into chunks of a specified size.  Input array= [1, 2, 3, 4, 5, 6, 7, 8, 9];  Size 3 Output[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+Write a function that splits an array into chunks of a specified size.Input array= [1, 2, 3, 4, 5, 6, 7, 8, 9]; Size 3Output[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 ChatGPT
 You can split an array into chunks of a specified size by iterating through the array and slicing it into subarrays of the given size. Here's a JavaScript function that does this:
 
@@ -255,12 +331,12 @@ Link :   https://youtu.be/qikxEIxsXco?feature=shared      (closures)
 
 +++++++++++++++++ react Fiber
 Ans)
-React Fiber is a complete rewrite of the React core algorithm, focusing on improving performance and responsiveness. Its main goal is to enable incremental rendering, allowing React
- to split the work of rendering into smaller chunks, and pause and resume the work as needed. This approach makes it possible to prioritize updates, resulting in a smoother
+React Fiber is a complete rewrite of the React core algorithm, focusing on improving performance and responsiveness. Its main goal is to enable incremental rendering, allowing React to split the work of rendering into smaller chunks, and pause and resume the work as needed. This approach makes it possible to prioritize updates, resulting in a smoother
+
 
  user experience, especially in large applications.
 
-Key Features of React Fiber -:
+Key Features of React Fiber -: 
 1.Incremental Rendering: Fiber divides the rendering work into smaller units, enabling it to yield control back to the browser whenever necessary, improving the application's responsiveness.
 2.Concurrency: Fiber introduces the ability to work on multiple tasks concurrently, making it easier to prioritize updates and efficiently manage rendering.
 3.Error Boundaries: Fiber introduces a new error-handling mechanism called Error Boundaries, which allows developers to catch errors in the component tree and display a fallback UI.
@@ -400,11 +476,7 @@ Session storage is only available for the duration of the user’s session, mean
 
 +++++++++++++++++++++++++++++++++++++++= What is Memoization?
 
-Ans) Memoization is a smart way to make your functions faster by storing and reusing their past results.
-
-Memoization is an optimization technique used to speed up computer programs by caching the results of expensive function calls
-
-and returning them when the same inputs are encountered again.
+Ans) Memoization is a smart way to make your functions faster by storing and reusing their past results.Memoization is an optimization technique used to speed up computer programs by caching the results of expensive function calls and returning them when the same inputs are encountered again.
 
 In JavaScript,
 
@@ -435,7 +507,7 @@ Providing caching and content delivery
 authentification and autheraigation  ?
 
 
-Ans) Authentication is the process of verifying the identity of a user, typically by checking a username and
+Ans) Authentification is the process of verifying the identity of a user, typically by checking a username and
 password or other credentials.
 
 
@@ -448,3 +520,2412 @@ Authorization is the process of determining what actions a user can perform on a
 
 
 https://jsonplaceholder.typicode.com/users
+
+
+
+link :
+
+
+
+https://www.simplilearn.com/tutorials/reactjs-tutorial/reactjs-interview-questions#basic_level__reactjs_interview_questions
+
+################ js Coding Que
+
+        https://medium.com/deno-the-complete-reference/10-javascript-coding-interview-questions-part-1-a0e5bb606eaf
+
+
+
+
+Hello ,
+
+I am ,
+
+I have completed my Bachlore of engineering from ........, after that I have trained my self in web development from sheriyans coding school.
+
+ I've become proficient in HTML, CSS, and JavaScript, and I've specialized in modern front-end frameworks like React.
+
+ Currently I'm a front-end developer with 2 years of experience in crafting web applications that not only look visually stunning but also deliver exceptional user experiences.
+
+
+
+
+
+ a React.js developer with 3 years of hands-on experience building dynamic and responsive web applications. I specialize in creating clean, efficient, and scalable front-end solutions using React.js, JavaScript, and modern web technologies like Redux, TypeScript, and Next.js. Over the years, I've worked on diverse projects, from small applications to large-scale systems, focusing on improving user experiences and performance optimization. 
+
+
+
+
+I’m passionate about front-end development and love staying updated with the latest trends in the React ecosystem. I’m excited to connect and explore opportunities to collaborate!”
+
+
+
+
+
+Sample answer: "I am looking to change my job because I am seeking a role that offers greater alignment with my career objectives and allows me to utilize my strengths and
+
+expertise to make a meaningful impact. I believe that a new environment will provide Fresh challenges and opportunities for growth.
+
+
+
+
+
+
+
+Salary Expectation ?
+
+“Given the job description and responsibilities, my experience level, and the competitive market, I'd expect a salary range of 4.5 lpa – 5.5lpa I
+
+Project Discription -:
+
+Currently I am working in phillipins airlines project , that is contact center team support application for customer support .
+
+its like call center team support but in call center there is only option for the costumer to raise the qeuery by a call ,
+
+but we developed contact center suport system ,
+
+In this project there are 2 parts one is for admin who can access all employees data like their attendance , their custmore feedback ,
+
+their qeuery and some extra funtinalities , On the other hand there is a common dashboard which is similar to all employees ,
+
+
+
+ who can log in by their credential and receive the queries from custmor by a call , audio, chat etc .
+
+
+
+ we have develped many features like call there is 2 option for call audio and video , message there is also 2 option for msg one is by
+
+whatsapp text and another is normal text.
+
+we also develped some status feature like online , break , offline , on leave , out of office ,
+
+we can change the ui according to the status .
+
+We are 8 members in a team, and I am working as a react js developer , I had developed some features like status change
+
+
+
+ [online , busy , be right back , offline etc] , all transfer , rating, feedback form and attendance tracker with the help of graph (which I get from backend development team ).
+
+
+
+
+
+
+
+
+
+Which external service did you use to create voice and video calls?
+
+We used Twilio as the external service to create voice and video calls. Twilio provides APIs that make it easy to add real-time communication features, like voice and video, into our application.
+
+Which protocol do we use in video streaming?
+
+We use the WebRTC (Web Real-Time Communication) protocol for video streaming. WebRTC allows peer-to-peer communication between browsers or apps, enabling video and audio streaming without the need for a third-party server.
+
+How did you transfer the call? Explain the process.
+
+
+
+To transfer a call, we used Twilio's API features. The process generally involves putting the current call on hold and then dialing a new number. Once the new call is connected, we bridge the original call to the new one, effectively transferring it. This can be done programmatically using Twilio's call control features.
+
+
+
+How did you ensure the secrecy (encryption) of user data while calling?
+
+We ensured the secrecy of user data by using encryption protocols like TLS (Transport Layer Security) for data in transit and SRTP (Secure Real-time Transport Protocol) for securing voice and video streams. This way, all communication between users is encrypted, protecting it from unauthorized access.
+
+For admin, how did you implement RBAC (Role-Based Access Control)?
+
+We implemented RBAC (Role-Based Access Control) by assigning specific roles to users, such as admin, supervisor, and agent. Each role had its own set of permissions. For example, admins could access and manage all data, supervisors could monitor agents, and agents could only access the information they needed to handle calls. This was managed through a combination of backend code and Twilio’s built-in capabilities to ensure that users only had access to what their role allowed.
+
+
+
+
+
+
+
+ +++++++++++++++++++++++ JavaScript data types are divided into primitive and non-primitive types.
+
+
+
+Primitive Data Types: They can hold a single simple value. String, Number, BigInt, Boolean, undefined, null, and Symbol are primitive data types.
+
+Non-Primitive Data Types: They can hold multiple values. Objects are non-primitive data types.
+
+
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Async and Await in JavaScript
+
+Ans) Async and Await in JavaScript is used to simplify handling asynchronous operations using promises. By enabling asynchronous code to appear synchronous, they enhance code readability and make it easier to manage complex asynchronous flows.
+
+Async Function
+
+The async function allows us to write promise-based code as if it were synchronous. This ensures that the execution thread is not blocked.
+
+Promise Handling: Async functions always return a promise. If a value is returned that is not a promise, JavaScript automatically wraps it in a resolved promise.
+
+
+
+Await Keywordp
+
+The await keyword is used to wait for a promise to resolve. It can only be used within an async block.
+
+Execution Pause: Await makes the code wait until the promise returns a result, allowing for cleaner and more manageable asynchronous code.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++useLayoutEffect in React
+
+Ans) useLayoutEffect is a hook in React that is similar to useEffect, but it fires synchronously after all DOM mutations. This means that any operations that need to interact with the DOM and need to be visible to the user should be done inside useLayoutEffect to prevent visual inconsistencies.
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++Understanding React.memo for Performance Optimization
+
+Ans) React.memo is a higher-order component (HOC) provided by React for optimizing functional components by memoizing them. When a component is wrapped with React.memo, React renders the component and memorizes the result. Before the next render, if the new props are the same, React reuses the memoized result, skipping the next rendering.
+
+Code Example
+
+Here's a basic example of how to use React.memo:
+
+import React, { memo } from 'react';
+
+const MyComponent = ({ name }) => {
+
+console.log('Rendering:', name);
+
+return
+
+ <div>
+
+Hello, {name}!
+
+</div>;
+
+};
+
+export default memo(MyComponent);
+
+In this example, MyComponent will only re-render if the name prop changes. If the parent component re-renders but the name prop remains the same, MyComponent will not re-render, thus saving performance costs.
+
+
+
+
++++++++++++++++++++++++++++++++When should we use React.memo()?
+
+It is best to use React.memo() when:
+
+Components are rendered too frequently and slow down the application.
+
+Component renders’ cost is high (When the loading time is more than 100ms).
+
+Component keeps re-rendering for the same set of props.
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++=What is useMemo()?
+
+Ans) useMemo() is one of the most used React Hooks among developers. It takes a function and a dependency array as input and memoizes the value returned by that function.
+
+The specialty of useMemo() is that it will only recalculate the memoized value when one of the dependencies changes. This optimization helps avoid costly calculations on each render.
+
+
+
+++++++++++++++++++++++++++++When to use useMemo?
+
+Ans) Before using the useMemo() hook, you need to make sure that:
+
+You’ve analyzed the component and verified whether it calculates a costly value in every render.
+
+
+
+Since it executes while rendering, your useMemo() hook has no side effects, and all side effects reside in the useEffect() hook.
+
+
+
+You don’t break any React Hooks rules and standards.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++     react functional component lifecycle
+
+https://manikandan-b.medium.com/react-functional-component-lifecycle-e8525f8fadea
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++ React Router DOM
+
+
+
+Ans) React Router DOM is a library for routing in React applications, providing a way to navigate between different components or pages within a web application. It allows developers to define routes in their application and link to these routes within their components
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++Controlled component:
+
+ In a controlled component, the value of the input element is controlled by React. We store the state of the input element inside the code, and by using event-based callbacks, any changes made to the input element will be reflected in the code as well.
+
+When a user enters data inside the input element of a controlled component, onChange function gets triggered and inside the code, we check whether the value entered is valid or invalid. If the value is valid, we change the state and re-render the input element with the new value.
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++Uncontrolled component: 
+
+In an uncontrolled component, the value of the input element is handled by the DOM itself. Input elements inside uncontrolled components work just like normal HTML input form elements.
+
+The state of the input element is handled by the DOM. Whenever the value of the input element is changed, event-based callbacks are not called. Basically, react does not perform any action when there are changes made to the input element.
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Error Boundaries
+
+Ans)  A JavaScript error in a part of the UI shouldn’t break the whole app. To solve this problem for React users, React 16 introduces a new concept of an “error boundary”.
+
+Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
+
+Note
+
+Error boundaries do not catch errors for:
+
+Event handlers (learn more)
+
+Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks)
+
+Server side rendering
+
+Errors thrown in the error boundary itself (rather than its children)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++ Spread and Rest Operator
+
+Ans) The spread operator (...) and the rest operator (...) in JavaScript use the same syntax (...), but they are used in different contexts and serve distinct purposes:
+
+
+
+Spread Operator
+
+The spread operator is used to spread out elements of an iterable (e.g., arrays, strings, or objects) into individual elements.
+
+
+
+Key Use Cases:
+
+Copying Arrays or Objects:
+
+
+
+
+
+const arr1 = [1, 2, 3];
+
+const arr2 = [...arr1]; // Creates a shallow copy
+
+console.log(arr2); // [1, 2, 3]
+
+
+
+The rest operator collects multiple elements into a single array or object. It is often used in function parameters or destructuring assignments.
+
+
+
+Key Use Cases:
+
+Function Parameters: It allows you to collect all remaining arguments into an array.
+
+
+
+function sum(...numbers) {
+
+  return numbers.reduce((acc, num) => acc + num, 0);
+
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+
+
+
+
+
+
+
++++++++++++++++++++++++++Lexical Scope
+
+Ans) Lexical scope is a fundamental concept in programming that determines the accessibility of variables and functions based on where they are defined in the source code. In simple terms, lexical scope is the scope of a variable or function determined at compile time by its physical location in the code. Unlike dynamic scope, which depends on how functions are called at runtime, lexical scope is static and remains the same throughout the program’s executi on.
+
+
+
+
+
+++++++++++++++++++++++++++++++++++ Hoisting in js
+
+Ans) Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during the compilation phase. This allows variables and functions to be used before they are declared in the code.
+
+
+
+Variable Hoisting
+
+In JavaScript, variable declarations using var are hoisted to the top of their scope and initialized with undefined. This means you can use a variable before it is declared, but its value will be undefined until the assignment is executed.
+
+console.log(foo); // undefined
+
+var foo = 'bar';
+
+console.log(foo); // "bar"
+
+Variables declared with let and const are also hoisted, but they are not initialized. Accessing them before declaration results in a ReferenceError due to the temporal dead zone (TDZ).
+
+console.log(bar); // ReferenceError: Cannot access 'bar' before initialization
+
+let bar = 'baz';
+
+Function Hoisting
+
+Function declarations are hoisted to the top of their scope, allowing you to call a function before it is defined.
+
+hoistedFunction(); // "Function is hoisted"
+
+function hoistedFunction() {
+
+console.log("Function is hoisted");
+
+}
+
+
+
+However, function expressions are not hoisted. If you try to call a function expression before its assignment, you will get a TypeError or ReferenceError.
+
+nonHoistedFunction(); // TypeError: nonHoistedFunction is not a function
+
+var nonHoistedFunction = function() {
+
+console.log("This function is not hoisted");
+
+};
+
+
+
+*******************************************    What is the use of prototype in JS?
+
+Ans)A prototype is an existing inbuilt functionality in JavaScript.
+
+Whenever we create a JavaScript function, JavaScript adds a prototype property to that function.
+
+A prototype is an object, where it can add new variables and methods to the existing object.
+
+Prototype model should be used when the desired system needs to have a lot of interaction with the end users.
+
+Typically, online systems, web interfaces have a very high amount of interaction with end users, are best suited for Prototype model.
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++What is the useEffect cleanup function?
+
+Ans ) As the name implies, useEffect cleanup is a function in the useEffect Hook that allows us to touch up our code before our component unmounts. When our code runs and reruns for every render, useEffect also cleans itself up using the cleanup function.
+
+The useEffect Hook is designed to allow the return of a function within it, which serves as a cleanup function. The cleanup function prevents memory leaks — a situation where your application tries to update a state memory location that no longer exists — and removes unnecessary and unwanted behaviors.
+
+Note that you don’t update the state inside the return function either:
+
+useEffect(() => {
+
+    effect
+
+    return () => {
+
+      cleanup
+
+    }
+
+  }, [input])
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++First-Class Function
+
+Ans) A programming language is said to have First-class functions if functions in that language are treated like other variables. So the functions can be assigned to any other variable or passed as an argument or can be returned by another function. JavaScript treats function as a first-class citizen. This means that functions are simply a value and are just another type of object.
+
+Usage of First-Class Function
+
+It can be stored as a value in a variable.
+
+It can be returned by another function.
+
+It can be passed into another function as a parameter.
+
+It can also stored in an array, queue, or stack.
+
+Also, It can have its own methods and property.
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++=
+
+                            Function Declaration                                                                                                                                        	Function Expression
+
+A function declaration must have a function name.                                                    	A function expression is similar to a function declaration without the function name.
+
+Function declaration does not require a variable assignment.                                         Function expressions can be stored in a variable assignment.
+
+These are executed before any other code.                                                        	Function expressions load and execute only when the program interpreter reaches the line of code.
+
+The function in function declaration can be accessed before and after the function definition.	The function in function expression can be accessed only after the function definition.
+
+Function declarations are hoisted                                                                                               	Function expressions are not hoisted
+
+Syntax: function geeksforGeeks(paramA, paramB) { // Set of statements }	                                  Syntax: var geeksforGeeks= function(paramA, paramB) { // Set of statements }
+
+
+
+
+
+
+
+++++++++++++++++++++===React hooks
+
+https://medium.com/@ankitakanchan97/mastering-react-hooks-a-comprehensive-guide-with-real-time-examples-7416c3460442#:~:text=In%20this%20blog%20post,%20we%E2%80%99ve%20explored%20the%20basics%20of%20React
+
+
+
++++++++++++++++++++++++++++++++++++++++ What is AJAX used for in JavaScript?
+
+Ans) Asynchronous JavaScript and XML (Ajax) refer to a group of technologies that are used to develop web applications. By combining these technologies,
+
+ web pages appear more responsive since small packets of data are exchanged with the server and web pages are not reloaded each time that a user makes an input change.
+
+____Ajax is made up of the following technologies:
+
+-XHTML and CSS for presenting information.
+
+-Document Object Model (DOM) for dynamically interacting with and displaying the presented information.
+
+-XMLHttpRequest object to manipulate data asynchronously with the web server.
+
+-XML, HTML, and XSLT for data interchange and manipulation.
+
+-JavaScript for binding data requests and information display.
+
+-Ajax incorporates these technologies to create a new approach to developing web applications.
+
+Ajax defines a method of initiating client to server communication without page reloads. It provides a way to enable partial page updates.
+
+ From a web page user perspective, it means improved interaction with a web application, which gives the user more control of their environment,
+
+similar to that of a desktop application.
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++ state variable used in react 
+
+Ans) In React, we use state instead of simple variables because when a component's state changes, React automatically re-renders the component to reflect these changes in the UI. React components are designed to be "reactive," meaning that they automatically update in response to changes in their data. This is why React uses state instead of simple variables: state makes it easy to keep the component's UI up-to-date with changes in the data, while simple variables do not have this capability.
+
+
+
+The main thing here is to know that a change in the state data triggers the re-rendering of the component while this is not the case with simple variables.
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++Controlled vs Uncontrolled Components in ReactJS
+
+Ans) In React,
+
+ Controlled components refer to the components where the state and behaviors are controlled by Parent components while Uncontrolled components are the ones having control of their own state and manage the behaviors on themselves.
+
+Uncontrolled Components
+
+Uncontrolled Components are the components that are not controlled by the React state and are handled by the DOM (Document Object Model). So in order to access any value that has been entered we take the help of refs.
+
+For instance, if we want to add a file as an input, this cannot be controlled as this depends on the browser so this is an example of an uncontrolled input.
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++what is the correct way to update state of a react componnts
+
+
+
+In React, there are several ways to update the state of a component depending on whether you're using class components or function components with hooks. The best approach is to use React's built-in state management functions, such as useState for function components or setState for class components
+
+  
+
+
+
+ 18001025557
+
+
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++  How to Ensure Cross-Browser Compatibility with React Applications
+
+Ans ) Cross-browser compatibility ensures that your web application performs well across different web browsers, such as Chrome, Firefox, Safari, Edge, and others. Each browser has its rendering engine and may interpret HTML, CSS, and JavaScript differently. Without ensuring compatibility, your application might look and function well in one browser but fail in another, leading to a poor user experience.
+
+
+
+Ensuring cross-browser compatibility is crucial because it helps in reaching a wider audience. Users might prefer different browsers due to personal preferences, device constraints, or corporate policies. By making sure your application works seamlessly across all major browsers, you enhance accessibility and user satisfaction, which can lead to higher engagement and retention.
+
+
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++ Callabck
+
+Ans) JavaScript is designed to handle asynchronous programming which allows us to perform multiple tasks at once without blocking the main execution thread. Callbacks are fundamental in this context, as they enable you to execute specific code after an asynchronous task is completed.
+
+
+
+What are Callbacks?
+
+A callback is a function that is passed as an argument to another function and is executed after the completion of that main function. In simple terms, a callback function is called at the end of a task to either deliver results or perform an action. You pass this callback function to the main function, and once the main function completes, it invokes the callback to proceed with the next steps.
+
+Why use Callbacks?
+
+Callbacks are used for managing the outcomes of asynchronous tasks without blocking the program’s execution. Asynchronous tasks, like network requests or database queries, take time to finish. If these tasks were synchronous, the program would halt until they were done, resulting in a sluggish user experience.
+
+With callbacks, though, you can keep the program running while these tasks happen in the background. When the task finishes, the callback function handles the result. This ensures the program stays responsive, enhancing the user experience.
+
+
+
+
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++What is a Promise?
+
+Ans) A promise in JavaScript is like a container for a future value. It is a way of saying, “I don’t have this value right now, but I will have it later.” Imagine you order a book online. You don’t get the book right away, but the store promises to send it to you. While you wait, you can do other things, and when the book arrives, you can read it.
+
+In the same way, a promise lets you keep working with your code while waiting for something else to finish, like loading data from a server. When the data is ready, the promise will deliver it.
+
+How Does a Promise Work?
+
+A promise can be in one of three states:
+
+Pending: The promise is waiting for something to finish. For example, waiting for data to load from a website.
+
+Fulfilled: The promise has been completed successfully. The data you were waiting for is now available.
+
+Rejected: The promise has failed. Maybe there was a problem, like the server not responding.
+
+When you create a promise, you write some code that will eventually tell the promise whether it was successful (fulfilled) or not (rejected).
+
+The promise constructor takes only one argument which is a callback function
+
+The callback function takes two arguments, resolve and reject
+
+Perform operations inside the callback function and if everything went well then call resolve.
+
+If desired operations do not go well then call reject.
+
+
+
+
+
+Here we have created a new promise using the Promise constructor. Inside the promise, there are two functions: resolve and reject. If everything goes well, we call resolve and pass the result. If something goes wrong, we call reject and pass an error message.
+
+let myPromise = new Promise(function(resolve, reject) {
+
+ // some code that takes time, like loading data
+
+ let success = true; // change this to false to check error
+
+ if (success) {
+
+  resolve("The data has loaded successfully!");
+
+ } else {
+
+  reject("There was an error loading the data.");
+
+ }
+
+});
+
+
+
+
+
+
+
+
+
+++++++++++++++ strtegi have implemented to optimise react performnce in react
+
+Ans) List visualization
+
+Lazy Loading Images
+
+Memoization
+
+Throttling and Debouncing Events
+
+Code Splitting
+
+React Fragments
+
+Web Workers
+
+UseTransition Hook
+
+
+
+
+
+
+
+
+
+++++++++++++ describe where SSR drastic imporoved a react performance 
+
+Ans) SSR means there is no need for loaders or spinners for the initial load. This means that, generally speaking, SSR will outperform CSR. SSR apps break JavaScript and CSS into chunks, optimize assets, and render pages on the server before serving to the client browser, resulting in a faster initial load time.
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++what are pursopse of keys in react and how do you affect re rendering of list
+
+Ans) Keys are unique identifiers for each item in the list that help React identify which items have changed, been added, or removed. When rendering a list in React.js, each item in the list should have a unique key associated with it. By providing a unique key for each element in a list, React can more efficiently update the DOM when the list changes. Without keys, React may end up re-rendering the entire list, even if only a few elements have changed. Using keys can help optimize the rendering performance of your React components.
+
+
+
+
+
+
+
+
+
++++++++++++++++++++ ant.d compare with other librar when complex components implemented
+
+Ans) Ant Design has a focus on performance, and its components are lightweight and fast-loading. The library also employs lazy loading, which speeds up the loading time of components. Ant Design offers an excellent user experience that is perfect for enterprise-level projects. The consistent design guidelines and accessibility focus make it the ideal option for building applications that will be used by a wide range of users. It’s a good choice if you need multilingual support in your project.
+
+
+
+Material UI also prioritizes performance, with its components designed to be lightweight and fast-loading. The library uses code splitting and tree shaking to minimize the size of the final bundle and enhance loading time.Material UI is the perfect choice for modern, engaging projects that call for an intuitive user interface. Its components are inspired by Material Design and it puts emphasis on animation as well as motion to offer an experience tailored precisely to your users’ needs. It also lends itself perfectly when you need a responsive design and customizations that can be done quickly and with ease.
+
+
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++ Event Loops
+
+Ans) The event loop continuously checks two main components: the call stack and the callback queue. The call stack keeps track of the currently executing function or task, while the callback queue stores callback functions waiting to be processed. If the call stack is empty, the event loop takes the first callback from the queue and pushes it onto the call stack for execution.
+
+
+
+
+
+++++++++++++++++++++++++++++Why React Testing Library   ( https://jestjs.io/docs/getting-started) 
+
+Ans)  Basically, React Testing Library (RTL) is made of simple and complete React DOM testing utilities that encourage good testing practices, especially one:
+
+
+
+
+
+
+
+ +++++++++++++++++++++++++ what is clone element in react
+
+Ans ) cloneElement() allows you to create a copy of an existing React element with additional props, children, and even a new key.
+
+With cloneElement you're taking an element where the user already passed some props to a component and passing additional props.
+
+It's not apparent from looking at the code where the prop is coming from. So it's make code less clear.
+
+ It also makes it harder to write composable components
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=The Virtual DOM Mechanism
+
+Ans) 
+
+React creates a virtual representation of the UI as a virtual DOM tree. When the state of the application changes, instead of updating the real DOM directly, React first updates this virtual DOM. The virtual DOM is a node tree that lists the elements, their attributes, and content as objects and their properties.
+
+React then compares the updated virtual DOM with a snapshot of the virtual DOM taken before the update—a process known as "diffing." During this process, React identifies which virtual DOM objects have changed and updates only those objects on the real DOM. This selective updating prevents unnecessary re-renders and improves performance, especially in complex applications with frequent state changes.
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++DOM Diffing :
+
+Ans) Whenever there is a change in the state of the UI elements, a new virtual DOM is created. Then the new virtual DOM and the previous virtual DOM are compared with each other. This comparing is called DOM diffing.
+
+The intention is to perform minimal operations on the real DOM, hence after diffing, the best way to update the real DOM is calculated, leading to an efficient update of the UI.
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++What is undefined?
+
+undefined is a primitive value automatically assigned to variables in certain situations:
+
+Uninitialized Variables: A variable that is declared but not initialized will have the value undefined.
+
+Missing Function Return: If a function does not explicitly return a value, it returns undefined by default.
+
+Non-Existent Object Properties or Array Elements: Accessing an object property or an array element that does not exist results in undefined.
+
+ 
+
+++++++++++++++++++++++++++++++++++++What is Null?
+
+null is a special value in JavaScript that represents the deliberate absence of any object value. It is often used to:
+
+Indicate “No Value”: null explicitly shows that a variable or object property should have no value.
+
+Reset or Clear Variables: Use null to reset a variable or remove its reference to an object.
+
+
+
+
++++++++++++++++++++++++++++++++++++++++UseContext
+
+Ans) The useContext hook in React provides an easy way to share data between components without having to pass props manually at every level. It allows you to access the value of a context in any component,
+
+1. Create a Context: First, you create a context using the React.createContext() method. This provides a way to define a "global" value that can be shared across components.
+
+2. Provide the Context Value: You use the Provider component that comes with the context to specify the value of the context. The Provider wraps the components that need access to the context.
+
+
+3. Consume the Context Value: Any component can use the useContext hook to access the context's value without passing props
+
+
+
+
+++++++++++++++++++++++++++++++++====Ref
+
+Ans)  ref is defined as any value that does not trigger a component re-render when it is changed. This behavior is contrary to the function of states and props. A ref can be created in two ways- by the useRef hook or by the createRef function.
+
+++++++++++++++++++++++++++++
+
+useRef:
+
+You can use useRef to access DOM elements directly, store mutable values that persist between renders, or create a reference to hold any value that you want to persist without causing a re-render.
+
+
+
+The useRef is a hook that uses the same ref throughout. It saves its value between re-renders in a functional component and doesn’t create a new instance of the ref for every re-render. It persists the existing ref between re-renders.
+
+createRef:
+
+The createRef is a function that creates a new ref every time. Unlike the useRef, it does not save its value between re-renders, instead creates a new instance of the ref for every re-render. Thus implying that it does not persist the existing ref between re-renders.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++What Exactly Is a Temporal Dead Zone in JavaScript?
+
+A temporal dead zone (TDZ) is the area of a block where a variable is inaccessible until the moment the computer completely initializes it with a value.
+
+A block is a pair of braces ({...}) used to group multiple statements.
+
+Initialization occurs when you assign an initial value to a variable.
+
+Suppose you attempt to access a variable before its complete initialization. In such a case, JavaScript will throw a ReferenceError.
+
+So, to prevent JavaScript from throwing such an error, you’ve got to remember to access your variables from outside the temporal dead zone.
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++ Redux Architecture
+
+ans) Redux is a state managing library used in JavaScript apps. It simply manages the state of your application or in other words, it is used to manage the data of the application. It is used with a library like React.
+
+Redux in React is the official React binding for Redux which allows the components in React to read data from a Redux Store, and dispatch Actions to the Store for updating the data. The purpose of Redux is to help applications scale well by providing means to manage the state via a unidirectional data flow model. 
+
+
+
+There are three principles of Redux these are:
+
+
+
+
+
+Single source of truth: -- It helps to create universal apps. The state of the application is stored in one object tree called store. It means one app, one store.
+
+State is read-only (Immutability):--  It means that we don’t change the state object and its properties directly. Instead of this make a new object, recalculate the new application state and update it with our newly created object. And this is important because all the changes are happening in the same place so everything is needed to be done in strict order and one by one.
+
+Changes are made with pure functions (reducers):-- Reducers are pure functions that take previous state and action (discuss later) and return the new state.
+
+
+
+Building Parts of redux:
+
+
+
+
+
+Action
+
+Reducer
+
+Store
+
+
+
+Actions: Actions are a plain JavaScript object that contains information. Actions are the only source of information for the store. Actions have a type field that tells what kind of action to perform and all other fields contain information or data. And there is one other term called Action Creators, these are the function that creates actions. So actions are the information (Objects) and action creator are functions that return these actions.
+
+Example: The easiest example we can take try is To-do. So we will create two action creators one for adding a task in to-do and for removing.
+
+
+
+Reducers: As we already know, actions only tell what to do, but they don’t tell how to do, so reducers are the pure functions that take the current state and action and return the new state and tell the store how to do.
+
+
+
+Store: The store is the object which holds the state of the application.
+
+Functions associated with Store:
+
+createStore() – To create a store
+
+dispatch(action) -To change the state
+
+getState() – for getting current state of store.
+
+
+
+
+
+Understanding the concept of useSelector
+
+useSelector is a hook provided by React Redux that allows functional components to extract and access data from the Redux store. It subscribes to the Redux store, and whenever the store is updated, the component re-renders to reflect the changes. 
+
+
+
+Understanding the concept of useDispatch
+
+useDispatch is another hook provided by React Redux, which allows functional components to dispatch actions to the Redux store. It returns a reference to the dispatch function from the Redux store, enabling components to trigger state changes. Here’s
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++What is Redux Thunk?
+
+Ans) Redux Thunk is like a reliable assistant for Redux, the manager of your app’s data.
+
+Imagine it as the go-to helper for handling tasks that take some time, such as checking stock in an online store. It ensures your app runs smoothly, managing both quick and more complex actions without slowing down the show.
+
+In this real-life scenario, Redux Thunk allows Redux to smoothly manage the asynchronous task of checking stock without freezing the entire operation.
+
+It’s like having an efficient assistant that can handle both quick tasks and more time-consuming ones, ensuring your online store runs seamlessly.
+
+Example: Suppose you are building a weather app using React and Redux. For this app you want to display the current temperature, but fetching this data from a weather API takes some time.
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++ReactJS Reconciliation
+
+Ans) React Reconciliation is the process through which React updates the Browser DOM. It makes the DOM updates faster in React. 
+
+React JS Reconciliation Working Concepts
+
+Virtual DOM
+
+Diffing Algorithm
+
+
+
+
+
++++++++++++ ++++++++++++ deep copy and shallow copy
+
+Ans)
+
+Shallow Copy Deep Copy
+
+Shallow Copy stores the references of objects to the original memory address.                         Deep copy stores copies of the object’s value.
+
+Shallow Copy reflects changes made to the new/copied object in the original object.                 Deep copy doesn’t reflect changes made to the new/copied object in the original object.
+
+Shallow Copy stores the copy of the original object and points the references to the objects.    Deep copy stores the copy of the original object and recursively copies the objects as well.
+
+A shallow copy is faster.                                                                                                                  Deep copy is comparatively slower.
+
+
+
+
++++++++++++++++++++ +++++++++ Closures
+
+Ans) A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
+
+In other words, a closure gives you access to an outer function's scope from an inner function.
+
+ A closure in JavaScript is a function that has access to the variables in its parent scope, even after the parent function has completed execution.
+
+ This allows for data to be "closed over" or remembered by the inner function, even after the outer function has returned.
+
+Link : https://youtu.be/qikxEIxsXco?feature=shared (closures)
+
+
+
+
++++++++++++++++++ +++++++++ React Fiber
+
+Ans)
+
+React Fiber is a complete rewrite of the React core algorithm, focusing on improving performance and responsiveness. Its main goal is to enable incremental rendering, allowing React to split the work of rendering into smaller chunks, and pause and resume the work as needed. This approach makes it possible to prioritize updates, resulting in a smoother
+
+ user experience, especially in large applications.
+
+Key Features of React Fiber -:
+
+1.Incremental Rendering: Fiber divides the rendering work into smaller units, enabling it to yield control back to the browser whenever necessary, improving the application's responsiveness.
+
+2.Concurrency: Fiber introduces the ability to work on multiple tasks concurrently, making it easier to prioritize updates and efficiently manage rendering.
+
+3.Error Boundaries: Fiber introduces a new error-handling mechanism called Error Boundaries, which allows developers to catch errors in the component tree and display a fallback UI.
+
+4.Scheduling: Fiber's scheduling mechanism helps to prioritize and manage updates more efficiently, ensuring that high-priority updates are processed before lower-priority ones.
+
+
+
+
+
++++++++++++++++++ DEBOUNCING AND THROTTLING
+
+Ans) Debouncing waits for a certain time before invoking the function again. Throttling limits the number of times the function can be called over a certain period. Ensures that the function is called only once, even if the event is triggered multiple times.
+
+Debouncing postpones the execution until after a period of inactivity, while throttling limits the execution to a fixed number of times over an interval.
+
+Throttling helps limit the rate of function calls to prevent overwhelming the system while debouncing delays function execution to handle situations where rapid or frequent calls are expected.
+
+
+
+
+
+
+
+++++++++++++++++++++++++++ PURE COMPONENTS 
+
+Ans) React component should always have pure rendering logic. This means that it must return the same output if its props, state, and context haven't changed.
+
+
+
+
+
+++++++++++++ ++++++++++ control flow
+
+Ans)
+
+Control flow is the order in which the computer executes statements in a script. Code is run in order from the first line in the file to the last line,
+
+unless the computer runs across the (extremely frequent) structures that change the control flow, such as conditionals and loops.
+
+
+
+
+
+
+++++++++++++++++++++++++++ Event bubling and and Event Capturing
+
+Ans ) Bubbling
+
+Bubbling is the default way that events propagate. It starts with the element that triggered the event and then bubbles up to the containing elements in the hierarchy.
+
+ This means that event handlers attached to the target element and its ancestors will be called, in the order in which they were attached.
+
+Capturing
+
+Capturing is the opposite of bubbling. It starts with the outermost element and then propagates down to the inner elements.
+
+ This means that event handlers attached to the ancestors of the target element will be called, in the reverse order in which they were attached.
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++  REST FULL API 
+
+Ans ) RESTful API stands for Representational State Transfer Application Programming Interface 
+
+RESTful API is an interface that two computer systems use to exchange information securely over the internet. Most business applications have to communicate with other internal and third-party applications to perform various tasks.
+
+
+
+
+++++++++++++++++++++++++++What is SOAP API used for?
+
+SOAP API, or simple object access protocol application programming interface, is a standard messaging protocol that operating systems use to communicate via Hypertext Transfer Protocol (HTTP) and Extensible Markup Language (XML).
+
+SoapUI is an Open Source and completely free tool with a commercial companion -ReadyAPI- that has extra functionality for companies with mission critical Web Services. SoapUI has been downloaded more than 3 million times and is seen as the de facto standard for API Service Testing.
+
+
+
+
+
+
+
+SOAP                                                                                                                                                                                       REST
+
+Stands for Simple Object Access Protocol                                                                                                               Representational State Transfer
+
+
+
+SOAP is a protocol for communication between applications                                                                   REST is an architecture style for designing communication interfaces.
+
+
+
+SOAP API exposes the operation.                                                                                                                   REST API exposes the data.
+
+
+
+SOAP is independent and can work with any transport protocol.                                                                    REST works only with HTTPS.
+
+
+
+SOAP supports only XML data exchange.                                                                                                      REST supports XML, JSON, plain text, HTML.
+
+
+
+SOAP messages are larger, which makes communication slower.                                                              REST has faster performance due to smaller messages and caching support.
+
+
+
+SOAP is difficult to scale.                                                                                                                          REST is easy to scale. 
+
+The server maintains state by storing all previous messages exchanged with a client.                   It’s stateless, so every message is processed independently of previous messages.
+
+
+
+SOAP supports encryption with additional overheads.                                                                                      REST supports encryption without affecting performance.
+
+
+
+SOAP is useful in legacy applications and private APIs.                                                                                         REST is useful in modern applications and public API
+
+
+
+
+
++++++++++++++++++++++++++++++ Array Dependency
+
+Ans) In React, a dependency array is used in hooks like useEffect and useMemo to determine when to re-run the effect or recompute the memoized value.
+
+ The dependency array is an array of values that the effect or memoized value depends on
+
+
+
+
+
+
+
+++++++++++++++++++++ sythetic Events
+
+Ans) React uses a synthetic events system to ensure that React apps and interfaces are consistent and fast.
+
+ It provides consistency by normalizing events across browsers and systems so that they have the same properties.
+
+
+
+
+
+++++++++++++++++++++++++ Higher oder fun
+
+Ans)JavaScript Higher-Order Functions are functions that can accept other functions as arguments, return functions, or both.
+
+ They enable abstraction and flexibility in code, allowing you to create reusable and modular functions for complex operations, making them essential in functional programming.
+
+ Ex:- fillter(), map() , reduce(),foreach()
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++Higher-order components 
+
+Ans) HOC is the advanced method of reusing the component functionality logic. It simply takes the original component and returns the enhanced component.
+
+
+
+Syntax:
+
+const EnhancedComponent = higherOrderComponent(OriginalComponent);
+
+# Reason to use Higher-Order component:
+
+Easy to handle
+
+Get rid of copying the same logic in every component
+
+Makes code more readable
+
+++++++++++++++++++++++++++++When to Use HOCs in your React Code
+
+# Authentication
+
+Suppose you have an application with various routes, some of which require the user to be authenticated before accessing them.
+
+Instead of duplicating the authentication logic in each component or route, you can create an HOC called withAuth that checks if the user is authenticated and redirects them to the login page if not. Then, you can wrap the specific components or routes that need authentication with this HOC, reducing duplication and enforcing consistent authentication behavior.
+
+# 
+
+Logging
+
+Imagine you want to log some data every time a specific set of components mount or update. Rather than adding the logging logic to each component, you can create an HOC called withLogger that handles the logging functionality.
+
+By wrapping the relevant components with withLogger, you can achieve consistent logging across those components.
+
+
+
+
+
+
+
+
+****************************** what is lazy loading in react
+
+Ans) In simple terms, lazy loading is a design pattern. It allows you to load parts of your application on-demand to reduce the initial load time.
+
+ For example, you can initially load the components and modules related to user login and registration. Then, you can load the rest of the components based on user navigation.
+
+ React provides a built-in React. lazy() method and Suspense component to achieve lazy loading.
+
+ Lazy loading is a technique for waiting to load certain parts of a webpage — especially images — until they are needed.
+
+
+
+
+
+
+****************************** Stateless COmponents
+
+Ans) A stateless component, also known as a functional component, is a fundamental concept in React that represents a UI element without any internal state management.
+
+ In simpler terms, a stateless component is a function that takes in props as input and returns JSX (JavaScript XML) to describe the UI.
+
+ Stateless components, also referred to as functional components, do not hold or manage local state. They simply accept data via props and render UI elements.
+
+With the introduction of Hooks in React 16.8, functional components have become more powerful, allowing them to use state and other React features without being class-based.
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++ process.nextTick()
+
+nextTick() . Every time the event loop takes a full trip, we call it a tick. The event loop is busy processing the current function code.
+
+ When this operation ends, the JS engine runs all the functions passed to nextTick calls during that operation.
+
+
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++o++++++++++++++++ store data in browser
+
+Ans ) Cookies: Cookies are small text files that can store data such as user preferences, login information, and shopping cart items.
+
+ They are typically used to store session data that is only available while the user’s browser is open.
+
+2. Local Storage: Local storage is a key-value store that can hold larger amounts of data than cookies.
+
+It is supported by modern web browsers and can be accessed via JavaScript. Local storage is persistent, meaning that the data will remain available even if the user closes their browser.
+
+3. Session Storage: Session storage is similar to local storage, but it is not persistent.
+
+Session storage is only available for the duration of the user’s session, meaning that the data will be lost when the user closes their browser.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++ What is the difference between fat arrow function and regular function?
+
+Ans) Regular functions have their own this context. And this is determined dynamically depending on how you call or execute the function.
+
+Arrow functions, on the other hand, do not have their own this context. Instead, they capture the this value from the surrounding lexical context
+
+in which the arrow function was created.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++= What is Memoization?
+
+Ans) Memoization is a smart way to make your functions faster by storing and reusing their past results.
+
+Memoization is an optimization technique used to speed up computer programs by caching the results of expensive function calls
+
+and returning them when the same inputs are encountered again.
+
+In JavaScript,
+
+ it's like using a memory system: if a function is asked the same question again, it quickly retrieves the answer from its memory instead of recalculating it.
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++ What is break and continue statements?
+
+Ans)Break statement stops the entire process of the loop. Continue statement only stops the current iteration of the loop.
+
+ Break also terminates the remaining iterations. Continue doesn't terminate the next iterations; it resumes with the successive iterations.
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++ event.preventDefault() and event.stopPropagation()
+
+Ans) preventDefault() is used to prevent the browser from executing the default action associated with the event.
+
+ It tells the browser not to perform its default behavior for the event. event. stopPropagation() is used to stop the event from propagating further in the DOM hierarchy.
+
+
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++ object prototype
+
+ans)Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++ THIS Keyword
+
+Ans ) THIS keyword has window value inside the non-strict mode
+
+but in the function === its value is window inside non strict modde but in the strict mode is undefne
+
+* this also depends how the function called -: if functiion clled like - x() then the value is undefiend but window.x() then value is given value is return value
+
+* in the object -: if method is called then this return a object and this represent the object
+
+so the value if (this.a) would we the a returned value
+
+*** Call Apply and Bind , tHIS keys behaves
+
+** if ThIS is present insdie the object's methos as an arrow function so it behaves like window
+
+  and inside the nested method its value is object
+
+** inside the DOM , it will give reference to html element
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++ CALL APPLY AND BIND 
+
+ANS) Absolutely! Understanding call, apply, and bind in JavaScript can be quite empowering. These methods are used to control the context (this value) in which a function is executed. Here's a brief overview of each:
+
+
+
+call
+
+The call method calls a function with a given this value and arguments provided individually.
+
+function greet(greeting, punctuation) {
+
+  console.log(greeting + ', ' + this.name + punctuation);
+
+}
+
+const person = { name: 'Alice' };
+
+greet.call(person, 'Hello', '!');
+
+In this example, greet.call(person, 'Hello', '!') sets this to person and passes 'Hello' and '!' as arguments to the greet function.
+
+
+
+
+
+apply
+
+The apply method is similar to call, but it takes an array of arguments instead of listing them individually.
+
+function greet(greeting, punctuation) {
+
+  console.log(greeting + ', ' + this.name + punctuation);
+
+}
+
+const person = { name: 'Alice' };
+
+greet.apply(person, ['Hello', '!']);
+
+Here, greet.apply(person, ['Hello', '!']) sets this to person and passes the array ['Hello', '!'] as arguments to the greet function.
+
+
+
+
+
+bind
+
+The bind method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+function greet(greeting, punctuation) {
+
+  console.log(greeting + ', ' + this.name + punctuation);
+
+}
+
+const person = { name: 'Alice' };
+
+const greetPerson = greet.bind(person, 'Hello');
+
+greetPerson('!');
+
+In this example, greet.bind(person, 'Hello') creates a new function greetPerson where this is bound to person and the first argument is set to 'Hello'. When greetPerson('!') is called, it logs 'Hello, Alice!'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is Babel?
+
+Babel is a JavaScript compiler and toolchain designed to transform modern JavaScript code (ES2015+ and beyond) into a version that can run in older browsers or environments. By converting new syntax into compatible JavaScript, Babel allows developers to use the latest features without waiting for all browsers to catch up.
+
+Here’s a simple breakdown of what Babel does and why it’s important for modern web development.
+
+Key Functions of Babel
+
+Syntax Transformation: Babel transforms newer JavaScript syntax into a version that older browsers can understand. For instance, it can convert ES2015 arrow functions into traditional functions.
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++ promises
+
+* Promise.all()
+
+* promise.allSettled()
+
+*Promise.race()
+
+* Promise.any()
+
++++++++++++++++++fat arrow fun
+
+++++++++++++++++++ setImmediatly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function countChar(words,val){
+
+  const word = words.toLowerCase();
+
+  const char = val.toLowerCase()
+
+   
+
+  totalChar = word.split("").reduce((acc,cur)=>{
+
+    if(cur===char){
+
+      acc++
+
+    }
+
+    return acc;
+
+  },0)
+
+  return totalChar;
+
+}
+
+
+
+console.log(countChar('AakankshA', 'a'))
+
+
+
+
+
+
+
+
+
+1. Scenario: Optimizing a React App
+
+Question: Your React application is slow, and the page re-renders unnecessarily. How would you identify and fix the issue?
+
+
+
+Answer:
+
+
+
+Identification:
+
+Use React Developer Tools to monitor components that re-render unnecessarily.
+
+Analyze the React Profiler to track rendering performance and identify bottlenecks.
+
+Check dependencies of useEffect, useMemo, or useCallback to avoid redundant executions.
+
+Fixes:
+
+Implement React.memo for functional components to prevent re-renders when props haven’t changed.
+
+Use useCallback to memoize event handlers and useMemo to cache expensive calculations.
+
+Optimize state management by lifting state up or breaking it into smaller, localized states.
+
+Ensure key props are unique in lists to avoid unnecessary DOM operations.
+
+
+
+
+
+2. Scenario: Handling Large Data Sets
+
+  Question: You need to display a table with 10,000 rows. How would you optimize rendering in React?
+
+
+
+Answer:
+
+
+
+Use virtualization libraries like react-window or react-virtualized to only render visible rows in the viewport.
+
+Paginate the data and fetch it in chunks, loading only the required data for each page.
+
+Memoize components or rows with React.memo to prevent re-rendering unchanged rows.
+
+Debounce or throttle any expensive filtering or search logic.
+
+
+
+
+
+3. Scenario: Managing Component State
+
+Question: You have a form with multiple fields. Users report that typing into the fields is slow. How would you address this?
+
+
+
+Answer:
+
+
+
+Avoid storing the entire form state in a single parent component to prevent unnecessary re-renders.
+
+Use useReducer or useState for managing each field's state independently or batch updates using a single handler.
+
+Debounce expensive validation logic in fields using a library like lodash.debounce.
+
+Use controlled components for form fields but ensure the component updates are scoped appropriately.
+
+
+
+
+
+4. Scenario: Memory Leaks in React
+
+Question: Users report that the application slows down over time. How would you detect and prevent memory leaks in your React app?
+
+
+
+Answer:
+
+
+
+Detection: Use Chrome DevTools or memory profiling tools to track retained components and event listeners.
+
+Prevention:
+
+Clean up effects in useEffect by returning a cleanup function to remove subscriptions or listeners.
+
+Avoid keeping large objects or closures in state unnecessarily.
+
+Use AbortController for cleaning up ongoing fetch requests.
+
+Ensure components are unmounted properly (e.g., avoid holding onto stale refs or event listeners).
+
+
+
+
+
+5. Scenario: Error Handling
+
+Question: A component in your app crashes during rendering. How would you handle the error gracefully?
+
+
+
+Answer:
+
+
+
+Use Error Boundaries to catch errors in the React component tree and display a fallback UI instead of breaking the entire application:
+
+jsx
+
+Copy
+
+Edit
+
+class ErrorBoundary extends React.Component {
+
+ constructor(props) {
+
+  super(props);
+
+  this.state = { hasError: false };
+
+ }
+
+
+
+ static getDerivedStateFromError(error) {
+
+  return { hasError: true };
+
+ }
+
+
+
+ componentDidCatch(error, errorInfo) {
+
+  console.error("Error caught:", error, errorInfo);
+
+ }
+
+
+
+ render() {
+
+  if (this.state.hasError) {
+
+   return <h1>Something went wrong.</h1>;
+
+  }
+
+  return this.props.children;
+
+ }
+
+}
+
+Wrap critical components with the ErrorBoundary.
+
+
+
+
+
+
+
+6. Scenario: Authentication State Across the App
+
+Question: How would you ensure that authentication state is available across different parts of your React application?
+
+
+
+Answer:
+
+
+
+Use Context API to create a global authentication context:
+
+jsx
+
+Copy
+
+Edit
+
+const AuthContext = React.createContext();
+
+
+
+const AuthProvider = ({ children }) => {
+
+ const [user, setUser] = useState(null);
+
+
+
+ const login = (userData) => setUser(userData);
+
+ const logout = () => setUser(null);
+
+
+
+ return (
+
+  <AuthContext.Provider value={{ user, login, logout }}>
+
+   {children}
+
+  </AuthContext.Provider>
+
+ );
+
+};
+
+
+
+export { AuthContext, AuthProvider };
+
+Wrap your app with the AuthProvider and access the context via useContext wherever needed.
+
+
+
+
+
+
+
+7. Scenario: SEO Optimization
+
+Question: How would you ensure that a React app is SEO-friendly?
+
+
+
+Answer:
+
+
+
+Use Server-Side Rendering (SSR) with frameworks like Next.js to render content on the server and send it to the client.
+
+Implement Static Site Generation (SSG) for pages that don't require dynamic data.
+
+Use proper meta tags, title tags, and structured data for better indexing.
+
+Optimize content rendering for crawlers that cannot execute JavaScript.
+
+Ensure links use semantic HTML (<a> tags) and leverage server-side redirections.
+
+
+
+
+
+
+
+8. Scenario: Avoiding Prop Drilling
+
+Question: You need to pass a value down multiple component levels. How would you avoid prop drilling?
+
+
+
+Answer:
+
+
+
+Use Context API to provide data at a higher level and consume it at the required level.
+
+Use state management libraries like Redux, Zustand, or MobX for more complex apps.
+
+Use composition patterns to pass components instead of data down the hierarchy.
+
+
+
+
+
+
+1. Scenario: How do you handle state management in a large-scale React application with deeply nested components?
+
+Answer:
+
+For large-scale applications with deeply nested components, state management can become challenging. The solution often involves:
+
+
+
+React Context API: For moderate needs, Context can help avoid prop drilling. For instance:
+
+jsx
+
+Copy
+
+Edit
+
+const ThemeContext = React.createContext();
+
+
+
+function App() {
+
+ const [theme, setTheme] = useState("light");
+
+
+
+ return (
+
+  <ThemeContext.Provider value={{ theme, setTheme }}>
+
+   <NestedComponent />
+
+  </ThemeContext.Provider>
+
+ );
+
+}
+
+State Management Libraries: For complex applications, libraries like Redux, Zustand, or Recoil are useful.
+
+Redux: Ideal for a global store and predictable state transitions.
+
+Zustand: Lightweight, less boilerplate.
+
+Recoil: Focused on atom-based state.
+
+
+
+
+
+
+
+
+
+2. Scenario: Your React app has a performance issue because of unnecessary re-renders. How do you debug and optimize it?
+
+Answer:
+
+Steps to debug and optimize:
+
+
+
+React DevTools: Use the "Highlight updates" feature to identify unnecessary re-renders.
+
+React.memo: Use React.memo for functional components to prevent re-renders when props haven't changed.
+
+jsx
+
+Copy
+
+Edit
+
+const MyComponent = React.memo(({ value }) => <div>{value}</div>);
+
+useCallback and useMemo: Optimize function and value dependencies.
+
+jsx
+
+Copy
+
+Edit
+
+const memoizedCallback = useCallback(() => doSomething(a, b), [a, b]);
+
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+Avoid Anonymous Functions in JSX: Declare handlers outside JSX to avoid new instances.
+
+Key in Lists: Ensure unique keys in lists to avoid DOM mismatches.
+
+
+
+
+
+
+
+
+
+3. Scenario: How would you handle an API failure or error in a React application?
+
+Answer:
+
+
+
+Error Boundary: For catching rendering errors:
+
+
+
+jsx
+
+Copy
+
+Edit
+
+class ErrorBoundary extends React.Component {
+
+ constructor(props) {
+
+  super(props);
+
+  this.state = { hasError: false };
+
+ }
+
+
+
+ static getDerivedStateFromError() {
+
+  return { hasError: true };
+
+ }
+
+
+
+ render() {
+
+  if (this.state.hasError) {
+
+   return <h1>Something went wrong.</h1>;
+
+  }
+
+  return this.props.children;
+
+ }
+
+}
+
+Handle Errors Gracefully:
+
+
+
+Use try-catch for API calls.
+
+Show fallback UI to users.
+
+jsx
+
+Copy
+
+Edit
+
+async function fetchData() {
+
+ try {
+
+  const response = await fetch("https://api.example.com/data");
+
+  if (!response.ok) throw new Error("API Error");
+
+  const data = await response.json();
+
+ } catch (error) {
+
+  console.error(error);
+
+  setError("Failed to fetch data");
+
+ }
+
+}
+
+
+
+
+
+
+
+
+
+4. Scenario: You need to implement a form in React that dynamically updates based on user inputs. How would you approach this?
+
+Answer:
+
+
+
+Controlled Components: Use useState to control input values.
+
+
+
+jsx
+
+Copy
+
+Edit
+
+function DynamicForm() {
+
+ const [formData, setFormData] = useState({ name: "", age: "" });
+
+
+
+ const handleChange = (e) => {
+
+  const { name, value } = e.target;
+
+  setFormData({ ...formData, [name]: value });
+
+ };
+
+
+
+ return (
+
+  <form>
+
+   <input name="name" value={formData.name} onChange={handleChange} />
+
+   <input name="age" value={formData.age} onChange={handleChange} />
+
+  </form>
+
+ );
+
+}
+
+Dynamic Inputs:
+
+
+
+Add fields dynamically using a map and track them in state as an array.
+
+jsx
+
+Copy
+
+Edit
+
+const [fields, setFields] = useState([{ value: "" }]);
+
+const addField = () => setFields([...fields, { value: "" }]);
+
+
+
+return (
+
+ <div>
+
+  {fields.map((field, index) => (
+
+   <input
+
+    key={index}
+
+    value={field.value}
+
+    onChange={(e) =>
+
+     setFields(fields.map((f, i) => (i === index ? { value: e.target.value } : f)))
+
+    }
+
+   />
+
+  ))}
+
+  <button onClick={addField}>Add Field</button>
+
+ </div>
+
+);
+
+
+
+
+
+
+
+
+
+5. Scenario: How do you handle SEO and server-side rendering in a React app?
+
+Answer:
+
+
+
+Use Next.js for Server-Side Rendering (SSR) or Static Site Generation (SSG).
+
+
+
+jsx
+
+Copy
+
+Edit
+
+export async function getServerSideProps() {
+
+ const res = await fetch("https://api.example.com/data");
+
+ const data = await res.json();
+
+ return { props: { data } };
+
+}
+
+
+
+function Page({ data }) {
+
+ return <div>{data.title}</div>;
+
+}
+
+export default Page;
+
+React Helmet: For dynamic metadata.
+
+
+
+jsx
+
+Copy
+
+Edit
+
+import { Helmet } from "react-helmet";
+
+function SEO() {
+
+ return (
+
+  <Helmet>
+
+   <title>My Page Title</title>
+
+   <meta name="description" content="My page description" />
+
+  </Helmet>
+
+ );
+
+}
+
+
+
+
+6. Scenario: Two sibling components need to share state without passing props. How would you do this?
+
+Answer:
+
+
+
+Lift State to the Common Parent: Move the shared state up and pass it down.
+
+
+
+jsx
+
+Copy
+
+Edit
+
+function Parent() {
+
+ const [sharedState, setSharedState] = useState("");
+
+
+
+ return (
+
+  <>
+
+   <Sibling1 sharedState={sharedState} setSharedState={setSharedState} />
+
+   <Sibling2 sharedState={sharedState} />
+
+  </>
+
+ );
+
+}
+
+React Context API: If siblings are far apart in the tree, use Context.
+
+
+
+jsx
+
+Copy
+
+Edit
+
+const SharedStateContext = React.createContext();
+
+
+
+function Parent() {
+
+ const [sharedState, setSharedState] = useState("");
+
+ return (
+
+  <SharedStateContext.Provider value={{ sharedState, setSharedState }}>
+
+   <Sibling1 />
+
+   <Sibling2 />
+
+  </SharedStateContext.Provider>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
