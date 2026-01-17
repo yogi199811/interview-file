@@ -25,6 +25,10 @@ what is the default property of Li and H1 tag ?
 what reset  css ?
 what is webSocket ?
 in functional component react lifecycle phase ?
+
+
+what will run befor promises and  setTimeout and why ?
+
  
  
 
@@ -67,8 +71,8 @@ By default, JavaScript is synchronous. This means it executes code sequentially,
  ::
  
  React requires state variables as it does not keep track of local variables, so when you attempt to modify them, React does not re-render the DOM. In React, state is a JavaScript object that stores data that can be modified over time. When the state of a component changes, React updates the UI to reflect the new state
- state variable is mutable
- local variable is immutable
+ state variable is immutable
+ local variable is mutable
  
 
  pure component
@@ -153,10 +157,9 @@ Makes Node.js suitable for scalable applications like web servers.
 
  deep copy or shallow copy
 
- * A deep copy is a copy that creates a new object with new memory locations for all of its properties and nested objects or arrays.
+ * A deep copy creates a completely new object, including new memory locations for all nested objects or arrays.
 
- * A shallow copy is a copy that creates a new object with the same memory locations for all of
- its properties and nested objects or arrays.
+ * A shallow copy creates a new object, but nested objects or arrays still reference the same memory location as the original object.
 
 
  what is jsx.
@@ -175,6 +178,8 @@ React Forms are the components used to collect and manage the user inputs. These
  react fiber
 
  React Fiber is a reimplementation of React's core algorithm, designed to enhance the user interface's responsiveness and renderability. The term "fiber" refers to a unit of work, a fundamental concept in the fiber architecture.
+
+ React Fiber is a reimplementation of React’s reconciliation algorithm introduced in React 16. It enables incremental rendering, task prioritization, and interruption of rendering work by breaking updates into small units called fibers, improving performance and user experience.
 
 
 
@@ -295,12 +300,7 @@ Salary Expectation ?
 
 
 
-Project Discription -:
-Currently I am working in phillipins airlines project , that is contact center team support application  for customer support .
-We are 8 members in a team, and I am working as a react js developer , I had developed some features like status change
- [online , busy , be right back , offline etc] , call transfer , rating, feedback form and attendance tracker with the help of graph (which I get from backend development team ).
 
-In this project there are 2 parts one is for admin who can access all employees data like their attendance , their custmore feedback , their qeuery  and some extra funtinalities , On the other hand there is a common dashboard which is similar to all employees , who can log in by their credential and only receive the queries from custmor by a call , audio, chat etc .
 
 
  ++++++++++ what is clone element in react 
@@ -325,6 +325,25 @@ In other words, a closure gives you access to an outer function's scope from an 
  A closure in JavaScript is a function that has access to the variables in its parent scope, even after the parent function has completed execution.
  This allows for data to be "closed over" or remembered by the inner function, even after the outer function has returned.
 
+ A closure is the combination of a function and its lexical environment in which it was created.
+This means a function can remember and access variables from its outer scope even after the outer function has finished executing.
+
+
+function counter() {
+  let count = 0;
+
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+
+const increment = counter();
+
+increment(); // 1
+increment(); // 2
+increment(); // 3
+
 Link :   https://youtu.be/qikxEIxsXco?feature=shared      (closures)
 
 
@@ -348,6 +367,9 @@ Key Features of React Fiber -:
 Ans)
 Control flow is the order in which the computer executes statements in a script. Code is run in order from the first line in the file to the last line, 
 unless the computer runs across the (extremely frequent) structures that change the control flow, such as conditionals and loops.
+
+
+
 
 
 ++++++++++++++++++++++++++ Event bubling and and Event Capturing
@@ -431,8 +453,75 @@ set of operations (HTTP methods) to manipulate resources on the server.
 
 
 ::: what is event propgation ?
+
+
+1️⃣ Event Propagation
+📌 Definition
+
+Event propagation is the mechanism by which an event travels through the DOM tree, starting from the top (capturing), reaching the target element, and then bubbling back up to the top.
+
+🔹 Phases of Event Propagation
+
+Capturing Phase – Event travels from root → target
+
+Target Phase – Event reaches the actual element
+
+Bubbling Phase – Event bubbles from target → root (default)
+
+🔹 Example
+child.addEventListener("click", () => {
+  console.log("Child clicked");
+});
+
+parent.addEventListener("click", () => {
+  console.log("Parent clicked");
+});
+
+2️⃣ stopPropagation()
+📌 Definition
+
+stopPropagation() is a method that stops an event from propagating further through the DOM hierarchy.
+
+🔹 Example
+child.addEventListener("click", (e) => {
+  e.stopPropagation();
+  console.log("Child clicked");
+});
+
+
+
+
+
+
+
 ::: dom diffing ?
+
+3️⃣ DOM Diffing
+📌 Definition
+
+DOM Diffing is a technique used by React to compare the previous Virtual DOM with the new Virtual DOM and update only the changed parts in the real DOM.
+
+🔹 Why it is important
+
+Improves performance
+
+Avoids unnecessary DOM updates
+
+Makes React fast
+
+🔹 Example
+<h1>{count}</h1>
+
+
+
+
 ::: useEffect and useLayoutEffect
+
+useEffect is a React Hook that allows you to perform side effects in function components after the component has rendered and the UI has been painted.
+
+useLayoutEffect is a React Hook that runs synchronously after all DOM mutations but before the browser paints the screen.
+
+
 ::: what is event propogation ?  whatt will happen if we use stop.propogation ?
 ::: async await and promises has 2 different 
 ::: 
@@ -535,116 +624,6 @@ https://www.simplilearn.com/tutorials/reactjs-tutorial/reactjs-interview-questio
 
 
 
-
-Hello ,
-
-I am ,
-
-I have completed my Bachlore of engineering from ........, after that I have trained my self in web development from sheriyans coding school.
-
- I've become proficient in HTML, CSS, and JavaScript, and I've specialized in modern front-end frameworks like React.
-
- Currently I'm a front-end developer with 2 years of experience in crafting web applications that not only look visually stunning but also deliver exceptional user experiences.
-
-
-
-
-
- a React.js developer with 3 years of hands-on experience building dynamic and responsive web applications. I specialize in creating clean, efficient, and scalable front-end solutions using React.js, JavaScript, and modern web technologies like Redux, TypeScript, and Next.js. Over the years, I've worked on diverse projects, from small applications to large-scale systems, focusing on improving user experiences and performance optimization. 
-
-
-
-
-I’m passionate about front-end development and love staying updated with the latest trends in the React ecosystem. I’m excited to connect and explore opportunities to collaborate!”
-
-
-
-
-
-Sample answer: "I am looking to change my job because I am seeking a role that offers greater alignment with my career objectives and allows me to utilize my strengths and
-
-expertise to make a meaningful impact. I believe that a new environment will provide Fresh challenges and opportunities for growth.
-
-
-
-
-
-
-
-Salary Expectation ?
-
-“Given the job description and responsibilities, my experience level, and the competitive market, I'd expect a salary range of 4.5 lpa – 5.5lpa I
-
-Project Discription -:
-
-Currently I am working in phillipins airlines project , that is contact center team support application for customer support .
-
-its like call center team support but in call center there is only option for the costumer to raise the qeuery by a call ,
-
-but we developed contact center suport system ,
-
-In this project there are 2 parts one is for admin who can access all employees data like their attendance , their custmore feedback ,
-
-their qeuery and some extra funtinalities , On the other hand there is a common dashboard which is similar to all employees ,
-
-
-
- who can log in by their credential and receive the queries from custmor by a call , audio, chat etc .
-
-
-
- we have develped many features like call there is 2 option for call audio and video , message there is also 2 option for msg one is by
-
-whatsapp text and another is normal text.
-
-we also develped some status feature like online , break , offline , on leave , out of office ,
-
-we can change the ui according to the status .
-
-We are 8 members in a team, and I am working as a react js developer , I had developed some features like status change
-
-
-
- [online , busy , be right back , offline etc] , all transfer , rating, feedback form and attendance tracker with the help of graph (which I get from backend development team ).
-
-
-
-
-
-
-
-
-
-Which external service did you use to create voice and video calls?
-
-We used Twilio as the external service to create voice and video calls. Twilio provides APIs that make it easy to add real-time communication features, like voice and video, into our application.
-
-Which protocol do we use in video streaming?
-
-We use the WebRTC (Web Real-Time Communication) protocol for video streaming. WebRTC allows peer-to-peer communication between browsers or apps, enabling video and audio streaming without the need for a third-party server.
-
-How did you transfer the call? Explain the process.
-
-
-
-To transfer a call, we used Twilio's API features. The process generally involves putting the current call on hold and then dialing a new number. Once the new call is connected, we bridge the original call to the new one, effectively transferring it. This can be done programmatically using Twilio's call control features.
-
-
-
-How did you ensure the secrecy (encryption) of user data while calling?
-
-We ensured the secrecy of user data by using encryption protocols like TLS (Transport Layer Security) for data in transit and SRTP (Secure Real-time Transport Protocol) for securing voice and video streams. This way, all communication between users is encrypted, protecting it from unauthorized access.
-
-For admin, how did you implement RBAC (Role-Based Access Control)?
-
-We implemented RBAC (Role-Based Access Control) by assigning specific roles to users, such as admin, supervisor, and agent. Each role had its own set of permissions. For example, admins could access and manage all data, supervisors could monitor agents, and agents could only access the information they needed to handle calls. This was managed through a combination of backend code and Twilio’s built-in capabilities to ensure that users only had access to what their role allowed.
-
-
-
-
-
-
-
  +++++++++++++++++++++++ JavaScript data types are divided into primitive and non-primitive types.
 
 
@@ -655,31 +634,6 @@ Non-Primitive Data Types: They can hold multiple values. Objects are non-primiti
 
 
 
-
-
-
-
-
-
-
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++ Async and Await in JavaScript
-
-Ans) Async and Await in JavaScript is used to simplify handling asynchronous operations using promises. By enabling asynchronous code to appear synchronous, they enhance code readability and make it easier to manage complex asynchronous flows.
-
-Async Function
-
-The async function allows us to write promise-based code as if it were synchronous. This ensures that the execution thread is not blocked.
-
-Promise Handling: Async functions always return a promise. If a value is returned that is not a promise, JavaScript automatically wraps it in a resolved promise.
-
-
-
-Await Keywordp
-
-The await keyword is used to wait for a promise to resolve. It can only be used within an async block.
-
-Execution Pause: Await makes the code wait until the promise returns a result, allowing for cleaner and more manageable asynchronous code.
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++useLayoutEffect in React
@@ -778,9 +732,38 @@ Ans) React Router DOM is a library for routing in React applications, providing 
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++Controlled component:
 
- In a controlled component, the value of the input element is controlled by React. We store the state of the input element inside the code, and by using event-based callbacks, any changes made to the input element will be reflected in the code as well.
+A controlled component is a React component where form input values are controlled by React state.
+Every change to the input is handled through React using onChange, and the UI is updated via state.
 
-When a user enters data inside the input element of a controlled component, onChange function gets triggered and inside the code, we check whether the value entered is valid or invalid. If the value is valid, we change the state and re-render the input element with the new value.
+import { useState } from "react";
+
+function ControlledForm() {
+  const [name, setName] = useState("");
+
+  return (
+    <input
+      type="text"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+    />
+  );
+}
+
+✅ Advantages
+
+Full control over input
+
+Easy validation
+
+Predictable behavior
+
+Best for complex forms
+
+❌ Disadvantages
+
+More code
+
+Re-render on every keystroke
 
 
 
@@ -788,12 +771,49 @@ When a user enters data inside the input element of a controlled component, onCh
 
 +++++++++++++++++++++++++++++++++++++++++++++Uncontrolled component: 
 
+An uncontrolled component is a React component where form input values are handled by the DOM itself, not by React state.
+
 In an uncontrolled component, the value of the input element is handled by the DOM itself. Input elements inside uncontrolled components work just like normal HTML input form elements.
 
 The state of the input element is handled by the DOM. Whenever the value of the input element is changed, event-based callbacks are not called. Basically, react does not perform any action when there are changes made to the input element.
 
 
+import { useRef } from "react";
 
+function UncontrolledForm() {
+  const inputRef = useRef();
+
+  const handleSubmit = () => {
+    console.log(inputRef.current.value);
+  };
+
+  return (
+    <>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleSubmit}>Submit</button>
+    </>
+  );
+}
+
+✅ Advantages
+
+Less code
+
+Better performance for large forms
+
+Simple use cases
+
+❌ Disadvantages
+
+Harder validation
+
+Less control
+
+Not reactive
+
+Bonus Interview Tip
+
+👉 React Hook Form internally uses uncontrolled components for better performance.
 
 
 

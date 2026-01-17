@@ -8,6 +8,22 @@
 // let reversenum = num.toString()
 // console.log(reversenum,typeof(reversenum));
 
+// Given an array of size n-1 containing unique numbers from 1 to n, find the missing number.Ex1:Input: [1, 2, 4, 5]Output: 3
+
+let uniquearr = [1, 2, 3, 4, 5, 6, 8, 9, 10];
+
+function missingNumber(arr) {
+  let n = arr.length + 1;
+
+  let sum = (n * (n + 1)) / 2;
+  const actualSum = arr.reduce((sum, num) => sum + num, 0);
+
+  return sum - actualSum;
+}
+
+console.log(missingNumber(uniquearr));
+
+
 function palindrome(word) {
   let reverse = word.split("").reverse().join("");
 
@@ -39,7 +55,6 @@ function reverseString(str) {
 function longestWord(word) {
   let words = word.split(" ");
   let longword = "";
-
 
   for (let word of words) {
     if (word.length > longword.length) {
@@ -159,7 +174,6 @@ function Star(height) {
       row += "*";
     }
 
-    
     console.log(row);
   }
 }
@@ -207,12 +221,12 @@ const mySize = 3;
 //++++++++++++++++
 
 const size = 4;
-function chunks(){
-  const res = []
-  for(let i = 0 ; i<array.length;i+=size){
-    res.push(array.slice(i,i+size))
+function chunks() {
+  const res = [];
+  for (let i = 0; i < array.length; i += size) {
+    res.push(array.slice(i, i + size));
   }
-  return res
+  return res;
 }
 //  console.log(chunksArrayValue(arr9, mySize));
 
@@ -285,6 +299,7 @@ function values(min, max) {
   // 6*(30-15+1)=96+15=111
 }
 
+
 // console.log(values(15,30));
 
 //++++++++++++++ repeating elements in array
@@ -340,7 +355,7 @@ const obj = { name: "yogi", age: 25, city: "BHopal" };
 function property(object, oldpro, newpro) {
   object[newpro] = object[oldpro];
   delete object[oldpro];
-  return object
+  return object;
 }
 const rename = property(obj, "age", "umar");
 // console.log(obj);
@@ -379,7 +394,6 @@ function reverseObj(obj) {
   return reverse;
 }
 console.log(reverseObj(obj5));
-
 
 // Question 28: Can you write a JavaScript function to truncate a given string to a specified length and append “…” if it exceeds that length?
 
@@ -464,8 +478,6 @@ const fruit = [
   "papaya",
 ];
 
-
-
 function find(fruit) {
   return fruit.reduce((acc, val) => {
     acc[val] = (acc[val] || 0) + 1;
@@ -492,7 +504,7 @@ function common(letters) {
 }
 console.log(common(letters));
 
-//  find duplicate in array 
+//  find duplicate in array
 
 const array = [1, 2, 3, 4, 5, 1, 2, 3];
 
@@ -504,16 +516,14 @@ function duplicate(array) {
     if (seen.has(item)) {
       duplicate.add(item);
     } else {
-      seen.add(item)
+      seen.add(item);
     }
   });
-  
 
-  return [...duplicate]
+  return [...duplicate];
 }
 
 console.log(duplicate(array));
-
 
 //++++++++++++  techValense +++++++++++++=
 
@@ -521,8 +531,8 @@ const array1 = [1, 2, 3, 4];
 const array2 = [3, 4, 5, 6];
 
 // Filter out elements that are not present in the other array
-const uniqueArray1 = array1.filter(item => !array2.includes(item));
-const uniqueArray2 = array2.filter(item => !array1.includes(item));
+const uniqueArray1 = array1.filter((item) => !array2.includes(item));
+const uniqueArray2 = array2.filter((item) => !array1.includes(item));
 
 // Combine the two unique arrays
 const array3 = [...uniqueArray1, ...uniqueArray2];
@@ -545,8 +555,6 @@ const idCounts = uniques.reduce((acc, elem) => {
 }, {});
 
 // Step 2: Filter elements with duplicate ids
-const duplicates = uniques.filter(elem => idCounts[elem.id] > 1);
+const duplicates = uniques.filter((elem) => idCounts[elem.id] > 1);
 
 console.log("Duplicate elements:", duplicates);
-
-
