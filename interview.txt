@@ -685,7 +685,41 @@ Component renders’ cost is high (When the loading time is more than 100ms).
 Component keeps re-rendering for the same set of props.
 
 
+Difference between map and forEach ?
 
+map() returns a new array, forEach() does not return anything.
+
+map() → “Transform and give me a new list”
+
+forEach() → “Just do something for each item”
+
+🧪 Example 1: map()
+const numbers = [1, 2, 3, 4];
+
+const doubled = numbers.map((num) => {
+  return num * 2;
+});
+
+console.log(doubled); // [2, 4, 6, 8]
+console.log(numbers); // [1, 2, 3, 4]
+
+What happened?
+
+A new array is created
+
+Original array is not modified
+
+const numbers = [1, 2, 3, 4];
+
+const result = numbers.forEach((num) => {
+  return num * 2;
+});
+
+console.log(result); // undefined ❌
+Why?
+forEach() ignores return
+
+It always returns undefined
 
 
 
@@ -835,17 +869,6 @@ Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks)
 Server side rendering
 
 Errors thrown in the error boundary itself (rather than its children)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1124,18 +1147,6 @@ In React, there are several ways to update the state of a component depending on
 
 
 
- 18001025557
-
-
-
-
-
-
-
-
-
-
-
 +++++++++++++++++++++  How to Ensure Cross-Browser Compatibility with React Applications
 
 Ans ) Cross-browser compatibility ensures that your web application performs well across different web browsers, such as Chrome, Firefox, Safari, Edge, and others. Each browser has its rendering engine and may interpret HTML, CSS, and JavaScript differently. Without ensuring compatibility, your application might look and function well in one browser but fail in another, leading to a poor user experience.
@@ -1143,12 +1154,6 @@ Ans ) Cross-browser compatibility ensures that your web application performs wel
 
 
 Ensuring cross-browser compatibility is crucial because it helps in reaching a wider audience. Users might prefer different browsers due to personal preferences, device constraints, or corporate policies. By making sure your application works seamlessly across all major browsers, you enhance accessibility and user satisfaction, which can lead to higher engagement and retention.
-
-
-
-
-
-
 
 
 
@@ -1169,15 +1174,6 @@ Why use Callbacks?
 Callbacks are used for managing the outcomes of asynchronous tasks without blocking the program’s execution. Asynchronous tasks, like network requests or database queries, take time to finish. If these tasks were synchronous, the program would halt until they were done, resulting in a sluggish user experience.
 
 With callbacks, though, you can keep the program running while these tasks happen in the background. When the task finishes, the callback function handles the result. This ensures the program stays responsive, enhancing the user experience.
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1231,11 +1227,6 @@ let myPromise = new Promise(function(resolve, reject) {
  }
 
 });
-
-
-
-
-
 
 
 
@@ -1294,14 +1285,6 @@ Ans) Ant Design has a focus on performance, and its components are lightweight a
 
 
 Material UI also prioritizes performance, with its components designed to be lightweight and fast-loading. The library uses code splitting and tree shaking to minimize the size of the final bundle and enhance loading time.Material UI is the perfect choice for modern, engaging projects that call for an intuitive user interface. Its components are inspired by Material Design and it puts emphasis on animation as well as motion to offer an experience tailored precisely to your users’ needs. It also lends itself perfectly when you need a responsive design and customizations that can be done quickly and with ease.
-
-
-
-
-
-
-
-
 
 
 
@@ -1908,20 +1891,11 @@ In JavaScript,
 
 
 
-
-
-
-
 +++++++++++++++++++++++++++++++++++++ What is break and continue statements?
 
 Ans)Break statement stops the entire process of the loop. Continue statement only stops the current iteration of the loop.
 
  Break also terminates the remaining iterations. Continue doesn't terminate the next iterations; it resumes with the successive iterations.
-
-
-
-
-
 
 
 
@@ -1933,22 +1907,9 @@ Ans) preventDefault() is used to prevent the browser from executing the default 
  It tells the browser not to perform its default behavior for the event. event. stopPropagation() is used to stop the event from propagating further in the DOM hierarchy.
 
 
-
-
-
-
-
-
-
-
-
 +++++++++++++++++++++++++++++++ object prototype
 
 ans)Prototypes are the mechanism by which JavaScript objects inherit features from one another.
-
-
-
-
 
 
 
@@ -1971,12 +1932,6 @@ so the value if (this.a) would we the a returned value
   and inside the nested method its value is object
 
 ** inside the DOM , it will give reference to html element
-
-
-
-
-
-
 
 
 
@@ -2047,17 +2002,6 @@ In this example, greet.bind(person, 'Hello') creates a new function greetPerson 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 What is Babel?
 
 Babel is a JavaScript compiler and toolchain designed to transform modern JavaScript code (ES2015+ and beyond) into a version that can run in older browsers or environments. By converting new syntax into compatible JavaScript, Babel allows developers to use the latest features without waiting for all browsers to catch up.
@@ -2067,13 +2011,6 @@ Here’s a simple breakdown of what Babel does and why it’s important for mode
 Key Functions of Babel
 
 Syntax Transformation: Babel transforms newer JavaScript syntax into a version that older browsers can understand. For instance, it can convert ES2015 arrow functions into traditional functions.
-
-
-
-
-
-
-
 
 
 +++++++++++++++++++++ promises
@@ -2089,22 +2026,6 @@ Syntax Transformation: Babel transforms newer JavaScript syntax into a version t
 +++++++++++++++++fat arrow fun
 
 ++++++++++++++++++ setImmediatly
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2839,112 +2760,6 @@ function Parent() {
    <Sibling2 />
 
   </SharedStateContext.Provider>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

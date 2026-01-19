@@ -1,0 +1,447 @@
+
+BACKEND INTERVIEW PREPARATION – MERN STACK (2+ YEARS EXPERIENCE)
+===============================================================
+
+what are strems ? in node js ?
+what is cluster in node js ?
+what is setImmediate function in node js ?
+what is middleware ?
+Difference between populate and Aggregation?
+
+
+SECTION 1: Node.js
+------------------
+
+1. What is Node.js?
+Definition:
+Node.js is a JavaScript runtime built on Chrome's V8 engine that allows running JavaScript on the server side.
+
+Example:
+const http = require("http");
+http.createServer((req, res) => {
+  res.end("Hello World");
+}).listen(3000);
+
+2. What is the Event Loop?
+Definition:
+The event loop handles asynchronous operations in Node.js and allows non-blocking I/O.
+
+Example:
+console.log("Start");
+setTimeout(() => console.log("Async Task"), 0);
+console.log("End");
+
+SECTION 2: Express.js
+--------------------
+
+3. What is Express.js?
+Definition:
+Express is a lightweight Node.js framework used to build APIs and web applications.
+
+Example:
+const express = require("express");
+const app = express();
+app.get("/users", (req, res) => {
+  res.json({ name: "Yogesh" });
+});
+
+4. Middleware in Express?
+Definition:
+Middleware functions execute before the request reaches the controller.
+
+Example:
+app.use((req, res, next) => {
+  console.log("Request received");
+  next();
+});
+
+SECTION 3: REST API
+------------------
+
+5. What is REST?
+Definition:
+REST is an architectural style for designing networked applications using HTTP methods.
+
+Methods:
+GET, POST, PUT, PATCH, DELETE
+
+Example:
+GET /api/users → Fetch users
+POST /api/users → Create user
+
+SECTION 4: MongoDB & Mongoose
+-----------------------------
+
+6. What is MongoDB?
+Definition:
+MongoDB is a NoSQL, document-based database that stores data in JSON-like format.
+
+Example Document:
+{
+  name: "John",
+  email: "john@gmail.com"
+}
+
+7. What is Mongoose?
+Definition:
+Mongoose is an ODM library for MongoDB in Node.js.
+
+Example:
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String
+});
+
+SECTION 5: Authentication & Authorization
+-----------------------------------------
+
+8. What is Authentication?
+Definition:
+Authentication verifies who the user is.
+
+9. What is Authorization?
+Definition:
+Authorization determines what the user can access.
+
+10. JWT Authentication?
+Definition:
+JWT is a token-based authentication mechanism.
+
+Example:
+jwt.sign({ id: user._id }, SECRET_KEY, { expiresIn: "1d" });
+
+SECTION 6: Security
+------------------
+
+11. How do you secure APIs?
+- Use JWT
+- Hash passwords using bcrypt
+- Use HTTPS
+- Validate inputs
+
+Example:
+const bcrypt = require("bcrypt");
+const hash = await bcrypt.hash(password, 10);
+
+SECTION 7: Error Handling
+------------------------
+
+12. Centralized Error Handling?
+Definition:
+A single middleware to handle all errors.
+
+Example:
+app.use((err, req, res, next) => {
+  res.status(500).json({ message: err.message });
+});
+
+SECTION 8: Performance
+---------------------
+
+13. How do you improve backend performance?
+- Caching (Redis)
+- Indexing in MongoDB
+- Pagination
+- Async processing
+
+Example:
+User.find().limit(10).skip(20);
+
+SECTION 9: Architecture
+----------------------
+
+14. MVC Architecture?
+Definition:
+Model → Data
+View → UI
+Controller → Business logic
+
+SECTION 10: DevOps & Deployment
+-------------------------------
+
+15. How do you deploy a MERN app?
+- Build frontend
+- Setup environment variables
+- Deploy backend on AWS / VPS
+- Use Nginx / PM2
+
+Example:
+pm2 start index.js
+
+SECTION 11: Common Interview Questions
+-------------------------------------
+
+16. Difference between PUT and PATCH?
+PUT → Full update
+PATCH → Partial update
+
+17. Difference between SQL and NoSQL?
+SQL → Structured
+NoSQL → Flexible schema
+
+18. What is CORS?
+Security feature that restricts cross-origin requests.
+
+Example:
+app.use(cors({ origin: "http://localhost:5173" }));
+
+===============================================================
+END OF FILE
+
+
+
+
+
+
+
+
+_________________________________________________________________________________
+
+
+
+
+
+MERN BACKEND INTERVIEW QUESTIONS – 2+ YEARS EXPERIENCE
+====================================================
+
+SECTION 1: Node.js (Basics + Internals)
+--------------------------------------
+1. What is Node.js?
+
+✅ Definition
+
+Node.js is a JavaScript runtime built on Chrome’s V8 engine that allows us to run JavaScript outside the browser, mainly on the server side, in a non-blocking and event-driven way.
+
+🌍 Real-World Example
+
+In a CRM or inventory system, Node.js is used to:
+
+Handle thousands of API requests
+
+Manage user authentication
+
+Communicate with databases (MongoDB)
+
+Serve REST APIs efficiently
+
+💻 Code Example
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  res.end("Hello from Node.js server");
+});
+
+server.listen(3000);
+
+
+2. How Node.js works internally?
+
+✅ Definition
+
+Node.js works using:
+
+Single-threaded event loop
+
+Non-blocking I/O
+
+Async callbacks
+
+Heavy tasks (file, DB, network) are handled by the libuv thread pool, not the main thread.
+
+🌍 Real-World Example
+
+When 100 users hit the login API:
+
+Node.js does not create 100 threads
+
+Requests are queued
+
+DB operations run in background
+
+Responses are returned when ready
+
+💻 Flow (Interview explanation)
+Request → Event Loop → Async Task → Callback Queue → Response
+
+
+
+3. What is V8 engine?
+
+✅ Definition
+
+V8 is Google’s JavaScript engine that converts JavaScript code into machine code so it can be executed very fast.
+
+🌍 Real-World Example
+
+When you write backend logic (JWT verification, validations),
+V8 compiles it and executes it efficiently on the server.
+
+💻 Code Example
+// This JS code is compiled by V8 to machine code
+const sum = (a, b) => a + b;
+console.log(sum(5, 10));
+
+
+4. What is the Event Loop?
+✅ Definition
+
+The Event Loop is the mechanism that allows Node.js to handle multiple asynchronous operations using a single thread.
+
+🌍 Real-World Example
+
+While one API is fetching data from MongoDB,
+Node.js can handle other API requests instead of waiting.
+
+💻 Code Example
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Async Task");
+}, 0);
+
+console.log("End");
+
+
+5. Explain Call Stack, Callback Queue, Microtask Queue
+
+
+6. Blocking vs Non-blocking code
+Definition
+
+Blocking → Stops execution until task finishes
+
+Non-blocking → Continues execution while task runs in background
+
+🌍 Real-World Example
+
+Blocking DB calls would freeze the server.
+Non-blocking allows handling multiple users simultaneously.
+
+💻 Code Example
+// Non-blocking
+fs.readFile("data.txt", "utf8", (err, data) => {
+  console.log(data);
+});
+
+console.log("This runs first");
+
+7. What are Streams?
+
+
+8. What is Buffer?
+9. Cluster module in Node.js
+10. process.nextTick vs setImmediate
+
+SECTION 2: Express.js
+--------------------
+11. What is Express.js?
+12. What are middlewares?
+13. Types of middleware
+14. Error-handling middleware
+15. Router vs App
+16. How request-response cycle works?
+17. How to structure Express app?
+18. How to handle validation?
+
+SECTION 3: REST API Design
+-------------------------
+19. What is REST?
+20. REST vs SOAP
+21. HTTP methods and use-cases
+22. PUT vs PATCH
+23. Status codes (200, 201, 400, 401, 403, 404, 500)
+24. Idempotent APIs
+25. Pagination vs Infinite scroll
+
+SECTION 4: MongoDB
+------------------
+26. What is MongoDB?
+27. BSON vs JSON
+28. Collections and Documents
+29. Indexing in MongoDB
+30. Aggregation pipeline
+31. Transactions in MongoDB
+32. Data modeling in NoSQL
+33. Normalization vs Denormalization
+
+SECTION 5: Mongoose
+-------------------
+34. What is Mongoose?
+35. Schema vs Model
+36. Population
+37. Middleware (pre/post hooks)
+38. Virtuals
+39. Lean queries
+40. Mongoose validation
+
+SECTION 6: Authentication & Authorization
+-----------------------------------------
+41. What is authentication?
+42. What is authorization?
+43. JWT structure
+44. Access token vs Refresh token
+45. How login flow works?
+46. Role-based access control
+47. OAuth basics
+48. Password hashing (bcrypt)
+
+SECTION 7: Security
+------------------
+49. How do you secure APIs?
+50. SQL Injection vs NoSQL Injection
+51. XSS attack
+52. CSRF attack
+53. Helmet usage
+54. Rate limiting
+55. CORS
+
+SECTION 8: Performance Optimization
+----------------------------------
+56. What is caching?
+57. Redis use-cases
+58. Pagination strategies
+59. Index optimization
+60. Async job processing
+61. Load balancing basics
+
+SECTION 9: Error Handling & Logging
+----------------------------------
+62. Centralized error handling
+63. Custom error classes
+64. Logging best practices
+65. Winston vs Morgan
+
+SECTION 10: Architecture & Design
+--------------------------------
+66. MVC architecture
+67. Clean architecture
+68. Service layer pattern
+69. Monolith vs Microservices
+70. When to use Microservices?
+
+SECTION 11: Deployment & DevOps
+-------------------------------
+71. Environment variables
+72. PM2
+73. Nginx basics
+74. CI/CD pipeline
+75. Docker basics
+
+SECTION 12: Testing
+------------------
+76. Unit testing
+77. Integration testing
+78. Jest basics
+79. Supertest
+
+SECTION 13: Real Project Questions
+---------------------------------
+80. Explain backend architecture of your project
+81. How did you handle large data?
+82. How did you improve performance?
+83. How did you secure APIs?
+84. Biggest backend challenge you faced
+85. How do you handle production bugs?
+
+====================================================
+END OF FILE
