@@ -1,0 +1,176 @@
+Perfect 👍
+Here is a complete, interview-ready explanation of Prototype & Prototypal Inheritance in JavaScript, written exactly in the style interviewers expect.
+
+🔹 Prototype and Prototypal Inheritance in JavaScript
+(Frontend Interview Question)
+🔹 What is Prototype?
+✅ Definition (Interview Standard)
+
+In JavaScript, a prototype is an object from which other objects inherit properties and methods.
+
+Every JavaScript object has an internal property called [[Prototype]] which points to another object. This linkage allows objects to access properties and methods that are not directly present on them.
+
+🔹 Why Do We Use Prototype?
+
+JavaScript is a prototype-based language, not a class-based one.
+
+Prototype helps to:
+
+Share methods between multiple objects
+
+Reduce memory usage
+
+Enable inheritance
+
+Improve performance
+
+🔹 How Prototype Works (Core Concept)
+
+When accessing a property on an object:
+
+JavaScript checks the object itself
+
+If not found, it looks in its prototype
+
+This continues up the prototype chain
+
+Stops at null
+
+🔹 Example: Prototype Usage
+function User(name) {
+  this.name = name;
+}
+
+User.prototype.sayHello = function () {
+  return `Hello ${this.name}`;
+};
+
+const user1 = new User("Yogesh");
+const user2 = new User("Amit");
+
+console.log(user1.sayHello());
+console.log(user2.sayHello());
+
+
+✔ sayHello() is stored once
+✔ Shared across all instances
+
+🔹 prototype vs __proto__
+Property	Belongs To	Purpose
+prototype	Constructor function	Used to define shared properties
+__proto__	Object instance	Points to its prototype
+user1.__proto__ === User.prototype // true
+
+🔹 What is Prototypal Inheritance?
+✅ Definition (Interview Standard)
+
+Prototypal inheritance is a mechanism in JavaScript where one object can inherit properties and methods from another object via the prototype chain.
+
+🔹 Example: Object-to-Object Inheritance
+const parent = {
+  greet() {
+    return "Hello from parent";
+  }
+};
+
+const child = Object.create(parent);
+
+console.log(child.greet());
+
+Prototype Chain:
+child → parent → Object.prototype → null
+
+🔹 Constructor Function Inheritance
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.sound = function () {
+  return "Animal sound";
+};
+
+function Dog(name) {
+  Animal.call(this, name);
+}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.bark = function () {
+  return "Woof!";
+};
+
+const dog = new Dog("Bruno");
+
+console.log(dog.sound());
+console.log(dog.bark());
+
+🔹 Class Syntax (Under the Hood)
+class Animal {
+  sound() {
+    return "Animal sound";
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    return "Woof";
+  }
+}
+
+
+📌 Note: JavaScript classes are just syntactic sugar over prototypes.
+
+🔹 Prototype Chain Visualization
+Dog instance
+   ↓
+Dog.prototype
+   ↓
+Animal.prototype
+   ↓
+Object.prototype
+   ↓
+null
+
+🔹 Advantages of Prototypal Inheritance
+
+✔ Memory efficient
+✔ Dynamic behavior sharing
+✔ No duplication of methods
+✔ Faster object creation
+
+🔹 Common Interview Questions
+❓ Does JavaScript support classical inheritance?
+
+👉 No, JavaScript uses prototype-based inheritance.
+
+❓ Can an object have multiple prototypes?
+
+👉 No, only one prototype (single inheritance).
+
+❓ Is __proto__ recommended?
+
+👉 No, use Object.getPrototypeOf().
+
+🔹 Key Takeaways (Must Remember)
+
+✔ Every object has a prototype
+✔ Functions have a prototype property
+✔ Objects access properties via prototype chain
+✔ Classes internally use prototypes
+
+🔹 One-Line Interview Answer
+
+JavaScript uses prototype-based inheritance where objects inherit properties and methods through a linked prototype chain rather than traditional classes.
+
+If you want next, I can explain:
+
+🔥 Tricky prototype outputs
+
+⚙️ Polyfills (Object.create)
+
+🧠 Prototype vs Class deep comparison
+
+🎯 Real interview scenarios
+
+Just tell me 👍

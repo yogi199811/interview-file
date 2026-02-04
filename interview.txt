@@ -427,6 +427,36 @@ so the value if (this.a) would we the a returned value
 
 *** Call Apply and Bind , tHIS keys behaves 
 
+call() invokes a function immediately and allows you to pass arguments one by one, with a specified this value.
+
+apply() is similar to call(), but it accepts arguments as an array.
+
+bind() returns a new function with a fixed this value and optional preset arguments.
+It does NOT invoke the function immediately.
+
+const name = {
+    fullName : "Yogesh",
+    lastName : "Kushwaha",
+    
+}
+const name2 = {
+       fullName : "Akku",
+    lastName : "Muniya",
+}
+
+const  printFullName = function(city,age){
+        console.log(`My name is ${this.fullName} ${this.lastName} and my city is ${city} and i am ${age} year old`)
+    }
+
+printFullName.call(name2,"bhopal",26)
+
+printFullName.apply(name,["indore",27])
+
+const  ans = printFullName.bind(name2,"noida",46)
+console.log(ans())
+
+
+
 ** if ThIS is present insdie the object's methos as an arrow function so it behaves like window
    and inside the nested method its value is object
 
@@ -982,6 +1012,9 @@ console.log("This function is not hoisted");
 
 
 *******************************************    What is the use of prototype in JS?
+
+Every JavaScript object has an internal property called [[Prototype]] that points to another object.
+This referenced object is called its prototype.
 
 Ans)A prototype is an existing inbuilt functionality in JavaScript.
 

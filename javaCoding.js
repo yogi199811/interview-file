@@ -23,7 +23,6 @@ function missingNumber(arr) {
 
 console.log(missingNumber(uniquearr));
 
-
 function palindrome(word) {
   let reverse = word.split("").reverse().join("");
 
@@ -299,7 +298,6 @@ function values(min, max) {
   // 6*(30-15+1)=96+15=111
 }
 
-
 // console.log(values(15,30));
 
 //++++++++++++++ repeating elements in array
@@ -365,7 +363,7 @@ const rename = property(obj, "age", "umar");
 const l = [5, 2, 45, 3, 74, 33, 9, 42, 4, 63, 3, 69, 1, 48, 85, 0, 25, 44, 5];
 
 const a = [...new Set(l)].sort(
-  (a, b) => a - b
+  (a, b) => a - b,
 ); /* ese sort karo gay toh galat aayega isliye function use karo sort ke andar */
 
 // console.log(a);
@@ -558,3 +556,20 @@ const idCounts = uniques.reduce((acc, elem) => {
 const duplicates = uniques.filter((elem) => idCounts[elem.id] > 1);
 
 console.log("Duplicate elements:", duplicates);
+
+
+// Find two numbers in array whose sum = target.
+
+Input: [2, 7, 11, 15], target = 9  
+Output: [0, 1]  // indexes
+
+
+function twoSum(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+}
