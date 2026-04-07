@@ -25,3 +25,20 @@ function multiply(a){
 
 console.log(multiply(5)(6)());
 
+
+
+function outer() {
+  let count = 0;
+
+  return function inner() {
+    count++;
+    return count;
+  };
+}
+
+const counter = outer();
+counter(); //1
+counter(); //2
+counter(); //3
+
+

@@ -11,6 +11,8 @@ useContext
 
 what is currying in jS ?
 
+Currying converts a function that takes multiple arguments into a chain of functions that each take a single argument.
+
 Currying is used in JavaScript to break down complex function calls into smaller, more manageable steps. It transforms a function with multiple arguments into a series of functions, each taking a single argument.
 
 It converts a function with multiple parameters into a sequence of functions.
@@ -47,6 +49,30 @@ how to scale the database ?
 Choosing the Right Approach:
 
 The best scaling approach depends on the specific needs of the application and database. Vertical scaling is suitable for smaller databases or when you want a quick and simple solution. Horizontal scaling is necessary when you need to handle a large volume of data or a large number of users. Sharding is a powerful technique for horizontal scaling, but it can also increase the complexity of the database architecture. 
+
+
+what is memory leak in JS ? IMP : 2026
+
+A memory leak occurs when objects remain reachable in memory even though they are no longer required, preventing JavaScript’s garbage collector from freeing that memory.
+
+2️⃣ Closures Causing Memory Leak
+function outer() {
+  let bigData = new Array(1000000).fill("leak");
+
+  return function inner() {
+    console.log("Still alive");
+  };
+}
+
+const fn = outer();
+
+
+Even though outer() finished:
+
+bigData stays in memory
+
+Because closure still references it
+
 
 
 
@@ -148,11 +174,6 @@ Makes Node.js suitable for scalable applications like web servers.
 
 
 
- middleware ?
-
- restful api ?
-
- 
  experince interview questions
 
  deep copy or shallow copy
@@ -200,9 +221,6 @@ Write a function that will return the duplicate element  from an arrayinput - [1
 what is state less component ?
 
 A stateless component is a React component that does not have its own state.
-
-
-
 
 
 
@@ -275,30 +293,8 @@ state less component
 
 lazey loading
 
-why we use lazy login
+why we use lazy loading
 pure component
-
-
-
-
-
-Hello , 
-I am yogesh kushwaha ,
-I have completed my Bachlore of engineering from TIT college in Mechanical stream, after that I have trained my self in web development from sheriyans coding school.
- I've become proficient in HTML, CSS, and JavaScript, and I've specialized in modern front-end frameworks like React.
- Currently I'm a  front-end developer with 2 years of experience in crafting web applications that not only look visually stunning but also deliver exceptional user experiences. 
-
-
-Why do you want to switch your current job?
-Sample answer: "I am looking to change my job because I am seeking a role that offers greater alignment with my career objectives and allows me to utilize my strengths and 
-
-expertise to make a meaningful impact. I believe that a new environment will provide Fresh challenges and opportunities for growth.
-
-Salary Expectation ?
-“Given the job description and responsibilities, my experience level, and the competitive market, I'd expect a salary range of  4.5 lpa – 5.5lpa I
-
-
-
 
 
 
@@ -309,14 +305,6 @@ With cloneElement you're taking an element where the user already passed some pr
 It's not apparent from looking at the code where the prop is coming from. So it's make code less clear.
  It also makes it harder to write composable components
 
-
-+++++++++++ deep copy and shallow copy
-Ans)
-Shallow Copy	                                                                                        Deep Copy
-Shallow Copy stores the references of objects to the original memory address.   	Deep copy stores copies of the object’s value.
-Shallow Copy reflects changes made to the new/copied object in the original object.	Deep copy doesn’t reflect changes made to the new/copied object in the original object.
-Shallow Copy stores the copy of the original object and points the references to the objects.	Deep copy stores the copy of the original object and recursively copies the objects as well.
-A shallow copy is faster.	                                                                 Deep copy is comparatively slower.
 
 
 +++++++++++++++++++ Closures 
@@ -609,21 +597,11 @@ Scoring: Calculate and display the user's score.
 Feedback: Provide feedback on correct and incorrect answers
 
 
-what is middleware 
-Ans) Middleware is a software component that acts as an intermediary between an operating system and applications running on
-it. It provides a layer of abstraction between the operating system and the application, allowing the application to
-interact with the operating system in a more standardized and efficient way.
-Middleware can perform a variety of functions, including:
-Connecting applications to databases
-Providing security features
-Managing communication between applications
-Handling transactions
-Providing caching and content delivery
  
 
 
 
-authentification and autheraigation  ?
+authentification and autheraization  ?
 
 
 Ans) Authentification is the process of verifying the identity of a user, typically by checking a username and
@@ -1132,24 +1110,6 @@ similar to that of a desktop application.
 
 
 
-
-
-
-
-++++++++++++++++++++++++++++ state variable used in react 
-
-Ans) In React, we use state instead of simple variables because when a component's state changes, React automatically re-renders the component to reflect these changes in the UI. React components are designed to be "reactive," meaning that they automatically update in response to changes in their data. This is why React uses state instead of simple variables: state makes it easy to keep the component's UI up-to-date with changes in the data, while simple variables do not have this capability.
-
-
-
-The main thing here is to know that a change in the state data triggers the re-rendering of the component while this is not the case with simple variables.
-
-
-
-
-
-
-
 +++++++++++++++++++++++++++++Controlled vs Uncontrolled Components in ReactJS
 
 Ans) In React,
@@ -1162,21 +1122,6 @@ Uncontrolled Components are the components that are not controlled by the React 
 
 For instance, if we want to add a file as an input, this cannot be controlled as this depends on the browser so this is an example of an uncontrolled input.
 
-
-
-
-
-
-
-
-
-++++++++++++++++++++++what is the correct way to update state of a react componnts
-
-
-
-In React, there are several ways to update the state of a component depending on whether you're using class components or function components with hooks. The best approach is to use React's built-in state management functions, such as useState for function components or setState for class components
-
-  
 
 
 
@@ -1287,14 +1232,9 @@ UseTransition Hook
 
 
 
-
-
-
 ++++++++++++ describe where SSR drastic imporoved a react performance 
 
 Ans) SSR means there is no need for loaders or spinners for the initial load. This means that, generally speaking, SSR will outperform CSR. SSR apps break JavaScript and CSS into chunks, optimize assets, and render pages on the server before serving to the client browser, resulting in a faster initial load time.
-
-
 
 
 
@@ -1333,21 +1273,6 @@ Ans) The event loop continuously checks two main components: the call stack and 
 
 Ans)  Basically, React Testing Library (RTL) is made of simple and complete React DOM testing utilities that encourage good testing practices, especially one:
 
-
-
-
-
-
-
- +++++++++++++++++++++++++ what is clone element in react
-
-Ans ) cloneElement() allows you to create a copy of an existing React element with additional props, children, and even a new key.
-
-With cloneElement you're taking an element where the user already passed some props to a component and passing additional props.
-
-It's not apparent from looking at the code where the prop is coming from. So it's make code less clear.
-
- It also makes it harder to write composable components
 
 
 
@@ -1557,24 +1482,6 @@ Diffing Algorithm
 
 
 
-
-+++++++++++ ++++++++++++ deep copy and shallow copy
-
-Ans)
-
-Shallow Copy Deep Copy
-
-Shallow Copy stores the references of objects to the original memory address.                         Deep copy stores copies of the object’s value.
-
-Shallow Copy reflects changes made to the new/copied object in the original object.                 Deep copy doesn’t reflect changes made to the new/copied object in the original object.
-
-Shallow Copy stores the copy of the original object and points the references to the objects.    Deep copy stores the copy of the original object and recursively copies the objects as well.
-
-A shallow copy is faster.                                                                                                                  Deep copy is comparatively slower.
-
-
-
-
 +++++++++++++++++++ +++++++++ Closures
 
 Ans) A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
@@ -1641,29 +1548,6 @@ Ans)
 Control flow is the order in which the computer executes statements in a script. Code is run in order from the first line in the file to the last line,
 
 unless the computer runs across the (extremely frequent) structures that change the control flow, such as conditionals and loops.
-
-
-
-
-
-
-++++++++++++++++++++++++++ Event bubling and and Event Capturing
-
-Ans ) Bubbling
-
-Bubbling is the default way that events propagate. It starts with the element that triggered the event and then bubbles up to the containing elements in the hierarchy.
-
- This means that event handlers attached to the target element and its ancestors will be called, in the order in which they were attached.
-
-Capturing
-
-Capturing is the opposite of bubbling. It starts with the outermost element and then propagates down to the inner elements.
-
- This means that event handlers attached to the ancestors of the target element will be called, in the reverse order in which they were attached.
-
-
-
-
 
 
 
@@ -1738,17 +1622,6 @@ Ans) In React, a dependency array is used in hooks like useEffect and useMemo to
 
  The dependency array is an array of values that the effect or memoized value depends on
 
-
-
-
-
-
-
-++++++++++++++++++++ sythetic Events
-
-Ans) React uses a synthetic events system to ensure that React apps and interfaces are consistent and fast.
-
- It provides consistency by normalizing events across browsers and systems so that they have the same properties.
 
 
 
@@ -1852,40 +1725,6 @@ nextTick() . Every time the event loop takes a full trip, we call it a tick. The
 
 
 
-
-
-
-
-
-
-++++++++++++++++++++++++++o++++++++++++++++ store data in browser
-
-Ans ) Cookies: Cookies are small text files that can store data such as user preferences, login information, and shopping cart items.
-
- They are typically used to store session data that is only available while the user’s browser is open.
-
-2. Local Storage: Local storage is a key-value store that can hold larger amounts of data than cookies.
-
-It is supported by modern web browsers and can be accessed via JavaScript. Local storage is persistent, meaning that the data will remain available even if the user closes their browser.
-
-3. Session Storage: Session storage is similar to local storage, but it is not persistent.
-
-Session storage is only available for the duration of the user’s session, meaning that the data will be lost when the user closes their browser.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 +++++++++++++++++++++++ What is the difference between fat arrow function and regular function?
 
 Ans) Regular functions have their own this context. And this is determined dynamically depending on how you call or execute the function.
@@ -1893,32 +1732,6 @@ Ans) Regular functions have their own this context. And this is determined dynam
 Arrow functions, on the other hand, do not have their own this context. Instead, they capture the this value from the surrounding lexical context
 
 in which the arrow function was created.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-+++++++++++++++++++++++++++++++++++++++= What is Memoization?
-
-Ans) Memoization is a smart way to make your functions faster by storing and reusing their past results.
-
-Memoization is an optimization technique used to speed up computer programs by caching the results of expensive function calls
-
-and returning them when the same inputs are encountered again.
-
-In JavaScript,
-
- it's like using a memory system: if a function is asked the same question again, it quickly retrieves the answer from its memory instead of recalculating it.
 
 
 
