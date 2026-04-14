@@ -180,7 +180,57 @@ Makes Node.js suitable for scalable applications like web servers.
 
  * A deep copy creates a completely new object, including new memory locations for all nested objects or arrays.
 
+ const obj1 = {
+  name: "yogesh",
+  address: {
+    city: "Delhi"
+  }
+};
+
+const obj2 = JSON.parse(JSON.stringify(obj1)); // deep copy
+
+obj2.name = "kushwaha";
+obj2.address.city = "Mumbai";
+
+console.log(obj1);
+console.log(obj2);
+🔹 Output
+obj1 = {
+  name: "yogesh",
+  address: { city: "Delhi" } ✅
+}
+
+obj2 = {
+  name: "kushwaha",
+  address: { city: "Mumbai" }
+}
+
  * A shallow copy creates a new object, but nested objects or arrays still reference the same memory location as the original object.
+
+ const obj1 = {
+  name: "yogesh",
+  address: {
+    city: "Delhi"
+  }
+};
+
+const obj2 = { ...obj1 }; // shallow copy
+
+obj2.name = "kushwaha";
+obj2.address.city = "Mumbai";
+
+console.log(obj1);
+console.log(obj2);
+🔹 Output
+obj1 = {
+  name: "yogesh",
+  address: { city: "Mumbai" } ❌
+}
+
+obj2 = {
+  name: "kushwaha",
+  address: { city: "Mumbai" }
+}
 
 
  what is jsx.
@@ -208,6 +258,32 @@ React Forms are the components used to collect and manage the user inputs. These
 
  cloneElement() allows you to create a copy of an existing React element with additional props, children, and even a new key.
 
+ React.cloneElement is used to clone a React element and inject or modify props without mutating the original element. It is commonly used in component composition patterns like layout wrappers, UI libraries, and form handling systems.
+
+ function Child(props) {
+  return <h1>Hello {props.name}</h1>;
+}
+
+function Parent() {
+  const element = <Child name="Yogesh" />;
+
+  const clonedElement = React.cloneElement(element, {
+    name: "Kushwaha"
+  });
+
+  return (
+    <>
+      {element}
+      {clonedElement}
+    </>
+  );
+}
+
+export default Parent;
+🔹 Output
+Hello Yogesh
+Hello Kushwaha
+
 
 
  control flow function
@@ -217,11 +293,6 @@ Control flow is the order in which the computer executes statements in a script
 Write a function that splits an array into chunks of a specified size.Input array= [1, 2, 3, 4, 5, 6, 7, 8, 9]; Size 3Output[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 Write a function that will return the duplicate element  from an arrayinput - [1,4,8,9,4,7,9]output  [4,9]
-
-what is state less component ?
-
-A stateless component is a React component that does not have its own state.
-
 
 
 
@@ -285,25 +356,15 @@ This subarray is then pushed into the result array.
 The function returns the result array containing the chunks.
 
 
-state less component 
+what is  state less component  ?
 
 ::A stateless component in React, often referred to as a functional component, is a component that does not manage or hold its own state. Instead, it receives data and methods as props from its parent component and renders the UI accordingly. These components are typically simpler and easier to test because they don't have a this context or lifecycle methods. 
 ::
 
 
-lazey loading
-
-why we use lazy loading
-pure component
 
 
 
-
- ++++++++++ what is clone element in react 
-Ans )  cloneElement() allows you to create a copy of an existing React element with additional props, children, and even a new key.
-With cloneElement you're taking an element where the user already passed some props to a component and passing additional props. 
-It's not apparent from looking at the code where the prop is coming from. So it's make code less clear.
- It also makes it harder to write composable components
 
 
 
@@ -390,6 +451,26 @@ Ans) In simple terms, lazy loading is a design pattern. It allows you to load pa
  For example, you can initially load the components and modules related to user login and registration. Then, you can load the rest of the components based on user navigation.
   React provides a built-in React. lazy() method and Suspense component to achieve lazy loading.
   Lazy loading is a technique for waiting to load certain parts of a webpage — especially images — until they are needed.
+
+
+  import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { Suspense } from "react";
+
+const Home = React.lazy(() => import("./Home"));
+const About = React.lazy(() => import("./About"));
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Suspense fallback={<div>Loading page...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  );
+}
 
 
 ****************************** Stateless COmponents 
