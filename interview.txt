@@ -77,8 +77,6 @@ Because closure still references it
 
 
 The useContext hook is used to consume values from a React context.
- 
-  usecallback , 
 
 What is callback hell in JavaScript W3schools?
 
@@ -533,7 +531,13 @@ console.log(ans())
 *Promise.race()
 * Promise.any()
 +++++++++++++++++fat arrow fun
+
+
+
 ++++++++++++++++++ setImmediatly
+
+Executes a callback immediately after the current event loop cycle
+Runs after synchronous code, but before timers like setTimeout(0) (in Node.js)
 
 ::: what is soup api or rest full api  ?
 Ans) REST (Representational State of Resource) is an architectural style for designing networked applications.
