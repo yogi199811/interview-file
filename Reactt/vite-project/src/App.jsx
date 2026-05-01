@@ -4,6 +4,7 @@ import RandomColor from './components/RandomColor'
 import ChangeName from './components/ChangeName'
 import ApiCalling from './components/ApiCalling'
 import ReactForm from './components/ReactForm'
+import Todo from './components/Todo'
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
     {/* <RandomColor/> */}
     {/* <ChangeName/> */}
     {/* <ApiCalling/> */}
-    <ReactForm/>
+    {/* <ReactForm/> */}
+    <Todo/>
     </>
   )
 }
