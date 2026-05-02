@@ -10,6 +10,27 @@
 
 // Given an array of size n-1 containing unique numbers from 1 to n, find the missing number.Ex1:Input: [1, 2, 4, 5]Output: 3
 
+
+
+
+// flat an array 
+function flattenArray(arr) {
+  let result = []
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      let flat = flattenArray(arr[i])   // recursion
+      result = result.concat(flat)
+    } else {
+      result.push(arr[i])
+    }
+  }
+
+  return result
+}
+
+console.log(flattenArray([1, [2, [3, 4], 5]]))
+
 let uniquearr = [1, 2, 3, 4, 5, 6, 8, 9, 10];
 
 function missingNumber(arr) {
@@ -557,12 +578,10 @@ const duplicates = uniques.filter((elem) => idCounts[elem.id] > 1);
 
 console.log("Duplicate elements:", duplicates);
 
-
 // Find two numbers in array whose sum = target.
 
-Input: [2, 7, 11, 15], target = 9  
-Output: [0, 1]  // indexes
-
+Input: ([2, 7, 11, 15], (target = 9));
+Output: [0, 1]; // indexes
 
 function twoSum(nums, target) {
   for (let i = 0; i < nums.length; i++) {
@@ -574,5 +593,81 @@ function twoSum(nums, target) {
   }
 }
 
+//  move all zero to end
+
+const arr = [1, 5, 0, 2, 5, 0, 3, 6, 0, 5];
+
+function moveZero(arr) {
+  let result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      result.push(arr[i]);
+    }
+  }
+
+  while (result.length < arr.length) {
+    result.push(0);
+  }
+
+  return result;
+}
+
+console.log(moveZero(arr));
 
 
+
+
+// find unique charcter in string or array
+
+// Input: "aabbcdeff"
+// Output: "c"
+
+
+// Input: [1,2,2,3,4,3,5]
+// Output: 1
+
+
+function findFirstUnique(str){
+    let obj = {}
+    
+    for(let i = 0 ; i < str.length ; i ++){
+        obj[str[i]] =  (obj[str[i]]  || 0) + 1
+    }
+    
+    for(let j = 0 ; j<str.length ; j++){
+        if(obj[str[j]] === 1){
+            return str[j]
+        }
+    }
+    
+    
+}
+
+console.log(findFirstUnique([1,2,2,3,4,3,5]))
+
+
+
+
+
+
+//  group annagram
+
+function groupAnagrams(arr) {
+  let map = {}
+
+  for (let i = 0; i < arr.length; i++) {
+    let word = arr[i]
+    let key = word.split("").sort().join("")
+
+    if (!map[key]) {
+      map[key] = []
+    }
+
+    map[key].push(word)
+  }
+
+  return Object.values(map)
+}
+
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))

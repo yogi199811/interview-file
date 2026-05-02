@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useDebounce } from "./Debounce";
 
 const Todo = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
   const [editTodo, setEditTodo] = useState(null);
+  const debounceSearch = useDebounce(search,1000)
 
   useEffect(() => {
     setTodos(JSON.parse(localStorage.getItem("todo")) || []);

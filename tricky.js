@@ -88,3 +88,14 @@ langda()
 
 // const arr3 = [...arr1 , ...arr2]
 // console.log(arr3);
+
+
+
+const obj = {
+  name: "Yogesh",
+  getName() {
+    console.log(this.name);
+  }
+};
+
+obj.getName();
