@@ -1,0 +1,226 @@
+🚀 TOP 10 MUST-DO INTERVIEW QUESTIONS
+1️⃣ Two Sum (HashMap 🔥)
+❓ Problem
+
+Find indices such that nums[i] + nums[j] = target
+
+💡 Optimal Idea
+
+Use a hashmap to store visited numbers.
+
+⏱ Complexity
+Time: O(n)
+Space: O(n)
+✅ Code
+function twoSum(nums, target) {
+  let map = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    let complement = target - nums[i];
+
+    if (map[complement] !== undefined) {
+      return [map[complement], i];
+    }
+
+    map[nums[i]] = i;
+  }
+}
+2️⃣ Longest Substring Without Repeating (Sliding Window 🔥🔥)
+💡 Idea
+
+Use Set + two pointers
+
+⏱ Complexity
+O(n)
+✅ Code
+function longestSubstring(s) {
+  let set = new Set();
+  let left = 0;
+  let max = 0;
+
+  for (let right = 0; right < s.length; right++) {
+    while (set.has(s[right])) {
+      set.delete(s[left]);
+      left++;
+    }
+
+    set.add(s[right]);
+    max = Math.max(max, right - left + 1);
+  }
+
+  return max;
+}
+3️⃣ Maximum Subarray (Kadane’s Algorithm 🔥)
+💡 Idea
+
+Keep running sum, reset when negative
+
+⏱ Complexity
+O(n)
+✅ Code
+function maxSubArray(nums) {
+  let maxSum = nums[0];
+  let current = nums[0];
+
+  for (let i = 1; i < nums.length; i++) {
+    current = Math.max(nums[i], current + nums[i]);
+    maxSum = Math.max(maxSum, current);
+  }
+
+  return maxSum;
+}
+4️⃣ Move Zeros (Two Pointer)
+💡 Idea
+
+Shift non-zero forward
+
+⏱ Complexity
+O(n)
+✅ Code
+function moveZeroes(nums) {
+  let j = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      [nums[i], nums[j]] = [nums[j], nums[i]];
+      j++;
+    }
+  }
+
+  return nums;
+}
+5️⃣ Valid Parentheses (Stack 🔥)
+💡 Idea
+
+Push open, match close
+
+⏱ Complexity
+O(n)
+✅ Code
+function isValid(s) {
+  let stack = [];
+  let map = {
+    ')': '(',
+    '}': '{',
+    ']': '['
+  };
+
+  for (let char of s) {
+    if (char === '(' || char === '{' || char === '[') {
+      stack.push(char);
+    } else {
+      if (stack.pop() !== map[char]) return false;
+    }
+  }
+
+  return stack.length === 0;
+}
+6️⃣ Binary Search 🔥
+💡 Idea
+
+Divide and conquer
+
+⏱ Complexity
+O(log n)
+✅ Code
+function binarySearch(arr, target) {
+  let left = 0, right = arr.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+
+    if (arr[mid] === target) return mid;
+    else if (arr[mid] < target) left = mid + 1;
+    else right = mid - 1;
+  }
+
+  return -1;
+}
+7️⃣ Merge Two Sorted Arrays
+💡 Idea
+
+Two pointers
+
+⏱ Complexity
+O(n + m)
+✅ Code
+function merge(arr1, arr2) {
+  let i = 0, j = 0;
+  let result = [];
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      result.push(arr1[i++]);
+    } else {
+      result.push(arr2[j++]);
+    }
+  }
+
+  return result.concat(arr1.slice(i)).concat(arr2.slice(j));
+}
+8️⃣ First Non-Repeating Character
+💡 Idea
+
+Frequency map
+
+⏱ Complexity
+O(n)
+✅ Code
+function firstUnique(s) {
+  let map = {};
+
+  for (let char of s) {
+    map[char] = (map[char] || 0) + 1;
+  }
+
+  for (let char of s) {
+    if (map[char] === 1) return char;
+  }
+
+  return null;
+}
+9️⃣ Group Anagrams 🔥
+💡 Idea
+
+Sort string → use as key
+
+⏱ Complexity
+O(n * k log k)
+✅ Code
+function groupAnagrams(strs) {
+  let map = {};
+
+  for (let word of strs) {
+    let key = word.split("").sort().join("");
+
+    if (!map[key]) map[key] = [];
+    map[key].push(word);
+  }
+
+  return Object.values(map);
+}
+🔟 Subarray Sum Equals K 🔥🔥
+💡 Idea
+
+Prefix sum + hashmap
+
+⏱ Complexity
+O(n)
+✅ Code
+function subarraySum(nums, k) {
+  let map = { 0: 1 };
+  let sum = 0;
+  let count = 0;
+
+  for (let num of nums) {
+    sum += num;
+
+    if (map[sum - k]) {
+      count += map[sum - k];
+    }
+
+    map[sum] = (map[sum] || 0) + 1;
+  }
+
+  return count;
+}

@@ -354,13 +354,78 @@ This subarray is then pushed into the result array.
 The function returns the result array containing the chunks.
 
 
+
+
+What causes unnecessary re-renders and how to prevent them?
+
+Unnecessary re-renders in React occur when a component re-renders even though its relevant data hasn’t changed. This usually happens due to state updates, parent re-renders, or changes in reference types like objects and functions.
+
+To prevent them, we use techniques like React.memo, useMemo, useCallback, proper state management, and avoiding inline object/function creation.
+
 what is  state less component  ?
 
 ::A stateless component in React, often referred to as a functional component, is a component that does not manage or hold its own state. Instead, it receives data and methods as props from its parent component and renders the UI accordingly. These components are typically simpler and easier to test because they don't have a this context or lifecycle methods. 
 ::
 
 
+what is usememo ?
 
+useMemo is a React Hook used to memoize the result of an expensive computation so that it is only recalculated when its dependencies change, improving performance by avoiding unnecessary recalculations during re-renders.
+
+
+import React, { useState, useMemo } from "react";
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [text, setText] = useState("");
+
+  const expensiveCalculation = (num) => {
+    console.log("Calculating...");
+    for (let i = 0; i < 1000000000; i++) {} // heavy task
+    return num * 2;
+  };
+
+  const result = useMemo(() => {
+    return expensiveCalculation(count);
+  }, [count]);
+
+  return (
+    <div>
+      <h1>{result}</h1>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <input value={text} onChange={(e) => setText(e.target.value)} />
+    </div>
+  );
+}
+
+
+
+what is useCallback ?
+
+useCallback is a React Hook used to memoize a function, so that it does not get recreated on every render.
+
+
+import React, { useState, useCallback } from "react";
+
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    console.log("Clicked");
+  }, []);
+
+  return (
+    <div>
+      <Child onClick={handleClick} />
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+
+const Child = React.memo(({ onClick }) => {
+  console.log("Child rendered");
+  return <button onClick={onClick}>Click Me</button>;
+});
 
 
 
@@ -2852,5 +2917,79 @@ function Parent() {
   </SharedStateContext.Provider>
 
 
+
+
+🔥 ✅ Is JavaScript tightly coupled or loosely coupled?
+
+👉 JavaScript is a loosely coupled language.
+
+JavaScript is a loosely coupled language because it supports dynamic typing, first-class functions, and flexible object structures, which reduce dependency between components. However, if not designed properly, applications can become tightly coupled, so we follow best practices like modular design and separation of concerns.
+
+🧠 What does “loosely coupled” mean?
+
+Loosely coupled means:
+
+Components/modules are independent
+Changing one part does NOT break other parts easily
+Less dependency between modules
+🔥 💡 Why JavaScript is Loosely Coupled?
+1️⃣ Dynamic Typing
+let a = 10;
+a = "hello"; // allowed
+
+👉 No strict dependency on type → flexible → loosely coupled
+
+2️⃣ Functions are First-Class Citizens
+function greet() {
+  return "Hello";
+}
+
+function execute(fn) {
+  console.log(fn());
+}
+
+execute(greet);
+
+👉 Functions can be passed → reduces dependency
+
+3️⃣ No Strict Class Dependency (Prototype-based)
+Objects can be extended dynamically
+No rigid structure like some OOP languages
+4️⃣ Event-Driven Nature
+button.addEventListener("click", () => {
+  console.log("Clicked");
+});
+
+👉 Code reacts to events instead of tightly linking logic
+
+⚠️ But Important Twist (Interview Trap)
+
+👉 JavaScript can become tightly coupled if you write bad code
+
+Example ❌
+
+function getUserData() {
+  const data = fetch("/api/user");
+  updateUI(data);
+}
+
+👉 Here:
+
+API + UI tightly linked ❌
+✅ Loosely Coupled Version (Best Practice)
+function getUserData(apiCall) {
+  return apiCall();
+}
+
+function updateUI(data) {
+  console.log(data);
+}
+
+👉 Now:
+
+Independent modules
+Reusable code
+Better maintainability
+🔥 🎯 Perfect Interview Answer
 
 
